@@ -1,0 +1,437 @@
+/* Modern Navbar CSS with Sticky Functionality */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+:root {
+    --primary-blue: #4a9ff5;
+    --light-blue: #e6f2ff;
+    --dark-blue: #1a73e8;
+    --text-color: #2c3e50;
+    --light-text: #5d8fc9;
+    --white: #ffffff;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Keyframe animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Marquee styles */
+.admission-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--dark-blue), var(--primary-blue));
+    color: var(--white);
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 20s linear infinite;
+}
+
+.marquee {
+    display: inline-block;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+/* Navbar container */
+.navbar-main-container {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Main navbar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, var(--light-blue), var(--white));
+    padding: 0.5rem 2rem;
+    color: var(--text-color);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    overflow: visible;
+    animation: scaleIn 0.5s ease-out;
+}
+
+.navbar.scrolled {
+    padding: 0.3rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* SVG pattern background */
+.navbar-svg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+/* Navbar title and logo */
+.navbar-title {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.image-container {
+    height: 70px;
+    width: 70px;
+    transition: var(--transition);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--white);
+    box-shadow: var(--shadow);
+}
+
+.navbar.scrolled .image-container {
+    height: 50px;
+    width: 50px;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.text-container {
+    text-align: left;
+}
+
+.navbar-brand {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    transition: var(--transition);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .navbar-brand {
+    font-size: 1.2rem;
+}
+
+.navbar-adress {
+    font-size: 0.8rem;
+    color: var(--light-text);
+    margin: 0;
+    transition: var(--transition);
+}
+
+.navbar.scrolled .navbar-adress {
+    font-size: 0.7rem;
+}
+
+/* Mobile menu icon */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 8px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.menu-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-icon-bar {
+    width: 25px;
+    height: 2px;
+    background-color: var(--dark-blue);
+    margin: 3px 0;
+    transition: var(--transition);
+}
+
+.menu-text {
+    font-size: 0.7rem;
+    color: var(--dark-blue);
+    margin-top: 3px;
+    font-weight: 500;
+}
+
+/* Navbar links and dropdowns */
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1;
+}
+
+.nav-link {
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transition: var(--transition);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.dropdown-icon {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.nav-link:hover .dropdown-icon {
+    transform: rotate(180deg);
+    color: var(--primary-blue);
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu {
+    position: absolute;
+    background: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    transform-origin: top center;
+    animation: fadeInDown 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.dropdown-item {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    padding-left: 1.2rem;
+}
+
+/* Overlay for mobile menu */
+.navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.navbar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .marquee {
+        padding-right: 20px;
+        font-size: 10px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+        background: linear-gradient(135deg, var(--light-blue), var(--white));
+    }
+
+    .navbar.scrolled {
+        padding: 8px 15px;
+    }
+
+    .navbar-title {
+        width: auto;
+    }
+
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+
+    .navbar-adress {
+        font-size: 0.65rem;
+    }
+
+    .image-container {
+        height: 45px;
+        width: 45px;
+    }
+
+    .navbar.scrolled .image-container {
+        height: 40px;
+        width: 40px;
+    }
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background: linear-gradient(135deg, var(--light-blue), var(--white));
+        flex-direction: column;
+        padding: 5rem 1.5rem;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+        transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        justify-content: flex-start;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .navbar-links.show {
+        left: 0;
+    }
+
+    .navbar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        width: 100%;
+        padding: 0.7rem 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        margin-top: 0.5rem;
+        margin-left: 1rem;
+        animation: none;
+        width: calc(100% - 2rem);
+        background: rgba(255, 255, 255, 0.3);
+        z-index: 1;
+    }
+
+    .dropdown-item {
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .marquee {
+        padding-right: 25px;
+        font-size: 12px;
+    }
+
+    .navbar {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .navbar-adress {
+        font-size: 0.75rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}

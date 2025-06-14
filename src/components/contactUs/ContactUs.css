@@ -1,0 +1,110 @@
+.contact-section {
+    /* background: linear-gradient(to right, #fce7f3, #e0f2fe); */
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-bottom: 2rem;
+}
+
+.contact-container {
+    display: flex;
+    background-color: #ffffff;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 90vw;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.map-container {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-info {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info h2 {
+    margin-bottom: 5px;
+    color: #be123c;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.contact-info p {
+    color: #374151;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.info-block strong {
+    color: #dc2626;
+}
+
+.info-block p {
+    margin: 6px 0 12px;
+    color: #1f2937;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #dc2626;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #dc2626;
+    color: white;
+    font-weight: 600;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
