@@ -1,0 +1,47 @@
+/* Container styling */
+.toppers-section {
+    padding: 40px 20px;
+    background: linear-gradient(to right, #f9f9f9, #ffffff);
+    text-align: center;
+}
+
+/* Image wrapper to add effects */
+.toppers-image-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.toppers-image-wrapper:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.toppers-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Optional heading for section title */
+.toppers-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .toppers-title {
+        font-size: 2rem;
+    }
+}

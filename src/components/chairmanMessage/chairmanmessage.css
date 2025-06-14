@@ -1,0 +1,219 @@
+/* RESET STYLES */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+/* IMAGE CARD */
+.Chairman_card {
+    width: 100%;
+    width: 17rem;
+    height: auto;
+    padding: 1rem;
+    background-image: url('../assets/trusteeImages/BackgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* IMAGE CONTAINER */
+.chairmain_img_container {
+    width: 10rem;
+    height: 12rem;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.chairman_main_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chairman_image {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+/* MAIN CONTAINER */
+@media (max-width:768px) {
+    .chairman_main_container {
+        height: 100%;
+    }
+}
+
+/* NAME STYLES */
+.chairman_name {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: medium;
+
+}
+
+/* CONTENT CONTAINER */
+.chairman-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* MESSAGE CONTAINER */
+.chairman_messahe-conatiner {
+    width: 100%;
+    text-align: left;
+}
+
+.chairman_name1 {
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+
+.chairmain-message-text {
+    font-weight: 100;
+    font-size: small;
+
+}
+
+.chairman-container {
+    padding: 1rem;
+}
+
+.member-name1 {
+    font-weight: bolder;
+    text-align: center;
+    color: #f9a825;
+}
+
+.member-position1 {
+    font-weight: bolder;
+    color: #fff;
+}
+
+/* RESPONSIVE FOR TABLET SCREENS (600px–768px) */
+@media (min-width: 600px) and (max-width: 767px) {
+    .chairman-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Chairman_card,
+    .chairman_messahe-conatiner {
+        width: 50%;
+    }
+
+    .chairman_messahe-conatiner {
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .Chairman_card {
+        width: 20rem;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .chairmain-message-text {
+        font-weight: 150;
+
+    }
+
+    .chairman_name1 {
+        font-weight: bolder;
+        font-size: 26px;
+
+    }
+
+    .chairman_name {
+
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0.7rem;
+
+    }
+   .chairman_main_container{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .chairman-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .Chairman_card,
+    .chairman_messahe-conatiner {
+        width: 50%;
+    }
+
+    .chairman_messahe-conatiner {
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .Chairman_card {
+        width: 20rem;
+        height: auto;
+
+        padding: 2rem;
+    }
+
+    .chairman_name1 {
+        font-weight: 900;
+        font-size: 30px;
+
+    }
+
+    .chairman_name {
+
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 1rem;
+
+    }
+
+    .chairmain_img_container {
+        width: 12rem;
+        height: 15rem;
+        overflow: hidden;
+        margin-bottom: 0.8rem;
+    }
+
+    .member-name1 {
+        font-size: 19px;
+        font-weight: bolder;
+    }
+
+    .member-position1 {
+        font-size: 20px;
+        font-weight: 400;
+
+    }
+
+.chairman_main_container{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+}

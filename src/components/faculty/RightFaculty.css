@@ -1,0 +1,126 @@
+.faculty-section {
+    padding: 60px 20px;
+    background: linear-gradient(to right, #f0f4f8, #ffffff);
+    text-align: center;
+}
+
+.faculty-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.faculty-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.faculty-content:hover {
+    transform: translateY(-5px);
+}
+
+.faculty-group-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.faculty-group-image:hover {
+    transform: scale(1.05);
+}
+
+.faculty-description {
+    max-width: 600px;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #555;
+    background: #fafafa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.faculty-description:hover {
+    background-color: #f5faff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.faculty-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-left: 5px solid #f9a825;
+    padding-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 992px) {
+    .faculty-title {
+        font-size: 2.5rem;
+    }
+
+    .faculty-description {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .faculty-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .faculty-title {
+        font-size: 2rem;
+    }
+
+    .faculty-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .faculty-description {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+
+    .faculty-subtitle {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .faculty-title {
+        font-size: 1.8rem;
+    }
+
+    .faculty-description {
+        font-size: 1rem;
+    }
+
+    .faculty-subtitle {
+        font-size: 1.2rem;
+    }
+}
