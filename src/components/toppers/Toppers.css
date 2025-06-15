@@ -1,8 +1,27 @@
 /* Container styling */
 .toppers-section {
+    position: relative;
     padding: 40px 20px;
-    background: linear-gradient(to right, #f9f9f9, #ffffff);
     text-align: center;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Background Image */
+.toppers-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/premium-vector/happy-graduation-greeting-background-with-cap_32582-287.jpg?uid=R113415327&ga=GA1.1.1560451971.1739186953&semt=ais_hybrid&w=740');
+    
+    background-repeat: no-repeat;
+    background-size: 98%; /* Adjust background size */
+    background-position: center;
+    
+    opacity: 0.6;
+    z-index: -1;
 }
 
 /* Image wrapper to add effects */
@@ -29,7 +48,7 @@
     transition: transform 0.3s;
 }
 
-/* Optional heading for section title */
+/* Section heading */
 .toppers-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -37,6 +56,14 @@
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 🔥 Remove blinking cursor if it existed */
+.toppers-title::after {
+    content: '';       /* No blinking bar */
+    animation: none;   /* Stop any blink animation */
 }
 
 /* Responsive adjustments */

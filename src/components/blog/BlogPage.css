@@ -29,9 +29,10 @@
   margin: 0 auto;
 }
 
+/* Fixed 3 columns on desktop */
 .blog-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -76,6 +77,16 @@
   margin-bottom: 1rem;
 }
 
+.blog-category {
+  display: inline-block;
+  background-color: #ffebee;
+  color: #c62828;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+}
+
 .read-more {
   background-color: #d32f2f;
   color: #fff;
@@ -93,7 +104,7 @@
 /* Tablet */
 @media (max-width: 992px) {
   .blog-list {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 

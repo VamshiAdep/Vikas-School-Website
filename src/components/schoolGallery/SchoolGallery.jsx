@@ -114,19 +114,16 @@ const SchoolGallery = () => {
   ];
 
   return (
-    <section className="relative mr-2.5 min-h-[90vh] py-16 px-4 overflow-hidden bg-white text-white">
-      {/* Background Image */}
+    <section className="relative min-h-[90vh] py-16 px-4 overflow-hidden bg-white text-white">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('src/components/assets/trusteeImages/videobg.jpg')` }}
       ></div>
 
-      {/* Overlay content */}
-      <div className="relative z-10"><br /><br />
-        {/* Section Heading */}
+      <div className="relative z-10">
         <h2
           ref={headingRef}
-          className="relative text-5xl lg:text-6xl font-bold text-center mb-36 text-gray-900"
+          className="relative text-4xl md:text-5xl font-bold text-center mb-24 text-gray-900"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
             Our School Gallery
@@ -135,17 +132,16 @@ const SchoolGallery = () => {
             <span className="absolute w-[80%] h-0.5 bg-gradient-to-r from-transparent via-gray-400 to-transparent transform -rotate-3"></span>
             <span className="absolute w-[80%] h-0.5 bg-gradient-to-r from-transparent via-gray-400 to-transparent transform rotate-3"></span>
           </span>
-        </h2><br /><br />
+        </h2>
 
-        {/* Gallery and Video Content */}
-        <div className="flex flex-col lg:flex-row items-start gap-16 mt-24">
-          {/* Left Scrolling Images */}
+        <div className="flex flex-col lg:flex-row items-start gap-12">
+          {/* Left image scroll */}
           <div
             ref={leftRef}
-            className="relative w-full lg:w-[60vw] h-[520px] flex justify-center gap-5 overflow-hidden"
+            className="relative w-full lg:w-[60%] h-[520px] flex justify-center gap-4 overflow-hidden"
           >
             {columns.map((colImages, colIndex) => (
-              <div key={colIndex} className="relative h-full w-[180px] overflow-hidden">
+              <div key={colIndex} className="relative h-full w-[140px] overflow-hidden">
                 <div
                   className="absolute top-0 left-0 w-full flex flex-col gap-6"
                   ref={(el) => (colRefs.current[colIndex] = el)}
@@ -155,7 +151,7 @@ const SchoolGallery = () => {
                       <img
                         src={img}
                         alt={`Event ${colIndex * 3 + idx}`}
-                        className="w-[180px] h-[180px] object-cover rounded-xl shadow-md"
+                        className="w-[140px] h-[140px] object-cover rounded-xl shadow-md"
                       />
                     </div>
                   ))}
@@ -164,10 +160,10 @@ const SchoolGallery = () => {
             ))}
           </div>
 
-          {/* Right Video Section */}
+          {/* Right Video */}
           <div
             ref={rightRef}
-            className="flex flex-col items-center w-full lg:w-[35vw] mt-10"
+            className="flex flex-col items-center w-full lg:w-[38%] mt-8"
           >
             <iframe
               src={`https://www.youtube.com/embed/${currentVideo}`}
@@ -175,31 +171,32 @@ const SchoolGallery = () => {
               allowFullScreen
               muted
               title="School Video"
-              className="w-full h-[400px] rounded-lg shadow-2xl"
-            ></iframe><br /><br />
+              className="w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] h-[180px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-lg shadow-2xl"
+            ></iframe>
 
-            <div className="flex mt-6 items-center gap-2 overflow-hidden overflow-x-auto w-full px-2 py-2 scroll-smooth no-scrollbar">
+            {/* Thumbnails */}
+            <div className="flex mt-3 items-center gap-2 overflow-x-auto w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] px-1 py-1 scroll-smooth no-scrollbar">
               <button
-                className="text-3xl text-gray-300 hover:text-white px-2"
+                className="text-xl text-gray-300 hover:text-white px-1"
                 onClick={handlePrev}
               >
                 ‹
               </button>
               {videoIds.map((id) => (
-                <div key={id} className="flex-shrink-0 w-[110px]">
+                <div key={id} className="flex-shrink-0 w-[100px]">
                   <img
                     src={`https://img.youtube.com/vi/${id}/0.jpg`}
                     alt={`Video ${id}`}
                     onClick={() => handleThumbnailClick(id)}
-                    className={`w-full h-[70px] object-cover rounded-md cursor-pointer border-2 transition-transform duration-300 ${currentVideo === id
-                        ? 'border-yellow-500 scale-105'
-                        : 'border-transparent'
+                    className={`w-full h-[65px] object-cover rounded-md cursor-pointer border-2 transition-transform duration-300 ${currentVideo === id
+                      ? 'border-yellow-500 scale-105'
+                      : 'border-transparent'
                       }`}
                   />
                 </div>
               ))}
               <button
-                className="text-3xl text-gray-300 hover:text-white px-2"
+                className="text-xl text-gray-300 hover:text-white px-1"
                 onClick={handleNext}
               >
                 ›

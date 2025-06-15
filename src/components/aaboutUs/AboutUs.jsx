@@ -70,15 +70,17 @@ const AboutUsPage = () => {
       </style>
 
       <h1 className="text-6xl md:text-8xl font-extrabold mb-10 text-center uppercase tracking-wide text-stroke">
-        🎓 About Vikas Primary and High School
+        🎓 About Vikas High School
       </h1>
-<br/> <br/>
-      <div className="flex flex-col  lg:flex-row justify-center items-center w-full max-w-6xl gap-10">
+
+      <div className="flex flex-col lg:flex-row justify-center items-center w-full max-w-6xl gap-10">
         {/* Left Section */}
-        <div className={`flex-1 flex flex-col items-start justify-center gap-6 transition-all duration-700 delay-150 px-2 md:px-8 ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-        }`}>
-          <h2 className="text-[6px]  md:text-[44px] font-bold text-stroke font-[cursive] tracking-wide">
+        <div
+          className={`flex-1 flex flex-col items-start justify-center gap-6 transition-all duration-700 delay-150 px-2 md:px-8 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+          }`}
+        >
+          <h2 className="text-[6px] sm:text-[44px] md:text-[44px] font-bold text-stroke font-[cursive] tracking-wide">
             Where Young Minds Blossom
           </h2>
 
@@ -91,44 +93,53 @@ const AboutUsPage = () => {
 
           {/* Circular Badge */}
           <div className="relative w-[160px] h-[160px] mt-10 flex items-center justify-center">
-  {/* Rotating Text - Exactly Twice */}
-  <div className="absolute w-full h-full animate-spin-slow">
-    {[...Array(24)].map((_, i) => {
-      const angle = i * 15; // 360 / 24 = 15° steps for 2 full repetitions
-      const text = " About Us • About Us • ";
-      return (
-        <span
-          key={i}
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: `rotate(${angle}deg) translate(65px) rotate(-${angle}deg)`,
-            transformOrigin: "0 0",
-            fontSize: "14px", // increased from 11px
-            color: "white",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {text[i % text.length]}
-        </span>
-      );
-    })}
-  </div>
-
-  {/* Center Icon */}
-  <div className="z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-300">
-    <span className="text-yellow-500 text-2xl">✨</span>
-  </div>
-</div>
-
+            <div className="absolute w-full h-full animate-spin-slow">
+              {[...Array(24)].map((_, i) => {
+                const angle = i * 15;
+                const text = ' About Us • About Us • ';
+                return (
+                  <span
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      top: '50%',
+                      transform: `rotate(${angle}deg) translate(65px) rotate(-${angle}deg)`,
+                      transformOrigin: '0 0',
+                      fontSize: '14px',
+                      color: 'white',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {text[i % text.length]}
+                  </span>
+                );
+              })}
+            </div>
+            <div className="z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-300">
+              <span className="text-yellow-500 text-2xl">✨</span>
+            </div>
+          </div>
         </div>
 
-        {/* Right Section - Carousel */}
-        <div className={`flex-1 flex flex-col items-center transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-        }`}>
-          <div className="relative w-full h-[300px] max-w-md rounded-xl overflow-hidden shadow-xl border-4 border-white">
+        {/* Right Section */}
+        <div
+          className={`flex-1 flex flex-col items-center transition-all duration-700 delay-200 ${
+            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+          }`}
+        >
+          {/* Mobile Static Image */}
+          <div className="block md:hidden w-full h-[220px] max-w-xs rounded-xl overflow-hidden border-2 border-white shadow-lg">
+            <img
+              src={images[0]}
+              alt="School"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Desktop/Tablet Carousel */}
+          <div className="hidden md:block relative w-full h-[300px] max-w-md rounded-xl overflow-hidden border-4 border-white shadow-xl">
             {images.map((img, index) => (
               <div
                 key={index}
@@ -140,19 +151,21 @@ const AboutUsPage = () => {
                   src={img}
                   alt={`School ${index + 1}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
             ))}
           </div>
 
-          <div className="flex justify-center mt-4 space-x-3">
+          {/* Dots */}
+          <div className="hidden md:flex justify-center mt-4 space-x-3">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3.5 h-3.5 rounded-full border border-purple-400 ${
                   index === currentImageIndex ? 'bg-purple-600' : 'bg-gray-300'
-                } transition-all duration-300`}
+                } transition-all duration-300 hover:scale-125`}
                 aria-label={`Slide ${index + 1}`}
               />
             ))}

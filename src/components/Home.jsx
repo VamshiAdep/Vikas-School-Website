@@ -15,7 +15,7 @@ const Home = () => {
                 <AboutUs />
             </div>
             <div  id="SchoolGallery">
-                <SchoolGallery  />
+                <SchoolGallery   />
             </div>
             <div id="ContactUs">
                 <ContactUs />

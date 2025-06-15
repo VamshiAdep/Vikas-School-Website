@@ -1,11 +1,17 @@
 .capability-section {
     padding: 40px 20px;
-    background: linear-gradient(to right, #f5f5f5, #ffffff);
-    text-align: center;
     min-height: 100vh;
+    text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #2c3e50;
+
+    background: url('https://img.freepik.com/premium-photo/festive-graduation-clipart-border-celebrating-success-32-aspect-ratio_1000124-165069.jpg?uid=R113415327&ga=GA1.1.1560451971.1739186953&semt=ais_hybrid&w=740');
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
+
 
 .capability-title {
     font-size: 2.8rem;
