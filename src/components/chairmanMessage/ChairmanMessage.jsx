@@ -1,3 +1,4 @@
+import React from 'react';
 import BhairiNiskham from '../assets/trusteeImages/BhairiNiskham1.png';
 import './chairmanmessage.css';
 

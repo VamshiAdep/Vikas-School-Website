@@ -17,7 +17,7 @@ const ContactUs = () => {
   title="School Location"
 />
 
-        </div>
+        </div><br></br>
 
         <div className="contact-info">
           <h2>CONTACT US</h2>
