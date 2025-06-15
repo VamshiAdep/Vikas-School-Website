@@ -14,12 +14,12 @@ export default function Facility() {
 
             <div className="pem-text">
                 <h2 className='heading-text'>
-                    <span className="pem-title-gray">P.E.M</span>{" "}
-                    <span className="pem-title-yellow">High School & Jr. College</span>
+                    <span className="pem-title-gray">Vikas</span>{" "}
+                    <span className="pem-title-yellow">High School</span>
                 </h2>
                 <div className="pem-description">
                     <p>
-                        PEM High School is one of the educational institutions managed by
+                        Vikas High School is one of the educational institutions managed by
                         Telugu Samaj Shikshan Sanstha in Bhiwandi. The school offers quality
                         education to students from kindergarten through 10th grade.
                         Additionally, PEM High School has a junior college section offering

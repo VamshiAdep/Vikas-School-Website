@@ -1,98 +1,132 @@
 .facilities-section {
-    padding: 40px 20px;
-    background: linear-gradient(to right, #f9f9f9, #ffffff);
-    text-align: center;
-    min-height: 100vh;
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Background image */
+.facilities-bg {
+  background-image: url('https://img.freepik.com/free-photo/red-buildings-households_1127-2024.jpg?uid=R113415327&ga=GA1.1.1560451971.1739186953&semt=ais_hybrid&w=740');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .facilities-title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  z-index: 2;
 }
 
 .facilities-caption {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    color: #555;
-    line-height: 1.6;
-    background: #f0f8ff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    font-weight: 500;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #333;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  z-index: 2;
+  position: relative;
 }
 
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
+/* Horizontal scrolling carousel */
+.facilities-slider-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.facilities-slider {
+  display: flex;
+  gap: 20px;
+  animation: scroll 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .facility-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 100%;
-    max-width: 300px;
-    text-align: left;
-    border: 1px solid #e0e0e0;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 280px;
+  flex-shrink: 0;
+  text-align: left;
+  border: 1px solid #e0e0e0;
 }
 
 .facility-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .facility-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .facility-card h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #f9a825;
-    display: inline-block;
-    padding-bottom: 6px;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #f9a825;
+  display: inline-block;
+  padding-bottom: 6px;
 }
 
 .facility-card p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .facilities-title {
-        font-size: 2rem;
-    }
+  .facilities-title {
+    font-size: 2rem;
+  }
 
-    .facilities-caption {
-        font-size: 1rem;
-        padding: 15px;
-    }
+  .facilities-caption {
+    font-size: 1rem;
+    padding: 15px;
+  }
 
-    .facility-card {
-        padding: 15px;
-        max-width: 90%;
-    }
+  .facility-card {
+    padding: 15px;
+    width: 250px;
+  }
 
-    .facility-card h3 {
-        font-size: 1.3rem;
-    }
+  .facility-card h3 {
+    font-size: 1.3rem;
+  }
 
-    .facility-card p {
-        font-size: 0.95rem;
-    }
+  .facility-card p {
+    font-size: 0.95rem;
+  }
 }
