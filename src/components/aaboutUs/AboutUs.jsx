@@ -122,24 +122,12 @@ const AboutUsPage = () => {
           </div>
         </div>
 
-        {/* Right Section */}
-        <div
-          className={`flex-1 flex flex-col items-center transition-all duration-700 delay-200 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}
-        >
-          {/* Mobile Static Image */}
-          <div className="block md:hidden w-full h-[220px] max-w-xs rounded-xl overflow-hidden border-2 border-white shadow-lg">
-            <img
-              src={images[0]}
-              alt="School"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-
+        {/* Right Section - Only visible on md screens and above */}
+        <div className={`hidden md:flex flex-1 flex-col items-center transition-all duration-700 delay-200 ${
+          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+        }`}>
           {/* Desktop/Tablet Carousel */}
-          <div className="hidden md:block relative w-full h-[300px] max-w-md rounded-xl overflow-hidden border-4 border-white shadow-xl">
+          <div className="relative w-full h-[300px] max-w-md rounded-xl overflow-hidden border-4 border-white shadow-xl">
             {images.map((img, index) => (
               <div
                 key={index}
@@ -158,7 +146,7 @@ const AboutUsPage = () => {
           </div>
 
           {/* Dots */}
-          <div className="hidden md:flex justify-center mt-4 space-x-3">
+          <div className="flex justify-center mt-4 space-x-3">
             {images.map((_, index) => (
               <button
                 key={index}
@@ -171,8 +159,8 @@ const AboutUsPage = () => {
             ))}
           </div>
         </div>
-      </div>
     </div>
+      </div>
   );
 };
 

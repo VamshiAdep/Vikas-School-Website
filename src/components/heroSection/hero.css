@@ -3,9 +3,11 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Form Wrapper (outer container from JSX) */
+/* Form Wrapper */
 .admission-container {
   background: #ffffff;
   border-radius: 1.25rem;
@@ -13,6 +15,8 @@ body {
   overflow: hidden;
   border: 1px solid #e2e8f0;
   animation: fadeIn 0.4s ease-in-out;
+  max-width: 500px;
+  margin: 2rem auto;
 }
 
 /* Header */
@@ -23,7 +27,7 @@ body {
   position: relative;
 }
 
-/* Logo Styling */
+/* Logo */
 .admission-header img {
   width: 70px;
   height: 70px;
@@ -34,7 +38,7 @@ body {
   display: block;
 }
 
-/* Title Text */
+/* Title */
 .admission-header h1 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -60,7 +64,7 @@ body {
   border-radius: 50%;
 }
 
-/* Form Fields */
+/* Form Body */
 .admission-body {
   padding: 2rem 1.5rem;
   display: flex;
@@ -105,19 +109,46 @@ body {
   transform: translateY(-2px);
 }
 
-/* Mobile Friendly */
-@media screen and (max-width: 480px) {
+/* Fully Decrease Size on Mobile */
+@media screen and (max-width: 380px) {
+  .admission-container {
+    transform: scale(0.75); /* Shrinks entire form */
+    transform-origin: top center;
+    max-width: 40%;
+    margin: 1rem auto;
+  }
+
   .admission-header h1 {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 
   .admission-header img {
-    width: 55px;
-    height: 55px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .admission-close-btn {
+    top: 0.6rem;
+    right: 0.6rem;
+    font-size: 1rem;
   }
 
   .admission-body {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.5rem;
+    gap: 0.8rem;
+  }
+
+  .admission-body input,
+  .admission-body select {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+  }
+
+  .admission-submit-btn {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+    border-radius: 0.6rem;
   }
 }
 
