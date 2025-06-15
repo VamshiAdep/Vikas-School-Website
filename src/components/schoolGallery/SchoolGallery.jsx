@@ -28,25 +28,11 @@ const videoIds = ['qLU4dpXP0B8', 'iuviq3yvUhc', 'jzQSc584XZ8', 'F1MaojJovbo'];
 
 const SchoolGallery = () => {
   const [currentVideo, setCurrentVideo] = useState(videoIds[0]);
-  const colRefs = useRef([]);
   const headingRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
 
   useEffect(() => {
-    colRefs.current.forEach((col, index) => {
-      const clone = col.cloneNode(true);
-      clone.classList.add('absolute', 'top-full', 'left-0');
-      col.parentNode.appendChild(clone);
-
-      gsap.to([col, clone], {
-        yPercent: index % 2 === 0 ? -100 : 100,
-        ease: 'none',
-        duration: 15,
-        repeat: -1,
-      });
-    });
-
     gsap.fromTo(
       headingRef.current,
       { opacity: 0, y: -60 },
@@ -118,49 +104,61 @@ const SchoolGallery = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('src/components/assets/trusteeImages/videobg.jpg')` }}
-      ></div>
+      ></div>  
 
       <div className="relative z-10">
+
+        {/* Big Stroked Background Text */}
+<h1
+  className="hidden sm:block absolute top-14 md:top-24 left-1/2 transform -translate-x-1/2 
+             text-[80px] md:text-[120px] lg:text-[160px] xl:text-[180px] 
+             font-bold text-black/10 pointer-events-none z-0 tracking-widest 
+             whitespace-nowrap select-none"
+  style={{
+    WebkitTextStroke: '1px #c0c0c0',
+    color: 'transparent',
+  }}
+>
+  SCHOOL GALLERY
+</h1>
+
+
+
+
+
         <h2
           ref={headingRef}
           className="relative text-4xl md:text-5xl font-bold text-center mb-24 text-gray-900"
         >
+          <br /><br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">
             Our School Gallery
           </span>
-          <span className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <span className="absolute w-[80%] h-0.5 bg-gradient-to-r from-transparent via-gray-400 to-transparent transform -rotate-3"></span>
-            <span className="absolute w-[80%] h-0.5 bg-gradient-to-r from-transparent via-gray-400 to-transparent transform rotate-3"></span>
-          </span>
         </h2>
+        <br /><br /><br /><br />
 
         <div className="flex flex-col lg:flex-row items-start gap-12">
-          {/* Left image scroll */}
+          {/* Left Image Grid */}
           <div
             ref={leftRef}
-            className="relative w-full lg:w-[60%] h-[520px] flex justify-center gap-4 overflow-hidden"
+            className="relative w-full lg:w-[60%] flex justify-center gap-4 flex-wrap mt-8"
           >
             {columns.map((colImages, colIndex) => (
-              <div key={colIndex} className="relative h-full w-[140px] overflow-hidden">
-                <div
-                  className="absolute top-0 left-0 w-full flex flex-col gap-6"
-                  ref={(el) => (colRefs.current[colIndex] = el)}
-                >
-                  {colImages.map((img, idx) => (
-                    <div key={idx} className="w-full">
-                      <img
-                        src={img}
-                        alt={`Event ${colIndex * 3 + idx}`}
-                        className="w-[140px] h-[140px] object-cover rounded-xl shadow-md"
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div key={colIndex} className="flex flex-col gap-6">
+                {colImages.map((img, idx) => (
+                  <div key={idx} className="w-[160px]">
+                    <img
+                      src={img}
+                      alt={`Event ${colIndex * 3 + idx}`}
+                      className="w-[160px] h-[160px] object-cover rounded-xl shadow-md"
+                    />
+                  </div>
+                ))}
               </div>
             ))}
           </div>
 
-          {/* Right Video */}
+          {/* Right Video Section */}
           <div
             ref={rightRef}
             className="flex flex-col items-center w-full lg:w-[38%] mt-8"
@@ -172,10 +170,10 @@ const SchoolGallery = () => {
               muted
               title="School Video"
               className="w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] h-[180px] sm:h-[250px] md:h-[300px] lg:h-[350px] rounded-lg shadow-2xl"
-            ></iframe>
+            ></iframe><br /><br />
 
-            {/* Thumbnails */}
-            <div className="flex mt-3 items-center gap-2 overflow-x-auto w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] px-1 py-1 scroll-smooth no-scrollbar">
+            {/* Video Thumbnails */}
+            <div className="flex overflow-hidden mt-3 items-center gap-2 overflow-x-auto w-[90%] sm:w-[85%] md:w-[80%] lg:w-[75%] px-1 py-1 scroll-smooth no-scrollbar">
               <button
                 className="text-xl text-gray-300 hover:text-white px-1"
                 onClick={handlePrev}
@@ -188,10 +186,11 @@ const SchoolGallery = () => {
                     src={`https://img.youtube.com/vi/${id}/0.jpg`}
                     alt={`Video ${id}`}
                     onClick={() => handleThumbnailClick(id)}
-                    className={`w-full h-[65px] object-cover rounded-md cursor-pointer border-2 transition-transform duration-300 ${currentVideo === id
-                      ? 'border-yellow-500 scale-105'
-                      : 'border-transparent'
-                      }`}
+                    className={`w-full h-[65px] object-cover rounded-md cursor-pointer border-2 transition-transform duration-300 ${
+                      currentVideo === id
+                        ? 'border-yellow-500 scale-105'
+                        : 'border-transparent'
+                    }`}
                   />
                 </div>
               ))}

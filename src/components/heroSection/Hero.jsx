@@ -118,7 +118,7 @@ export default function HeroPage() {
   useEffect(() => {
     injectStyle();
 
-    const fullText = "Welcome<br>to Vikas<br>HIGH School";
+    const fullText = "Welcome<br>to Vikas<br>English Medium <br/> School.";
     let i = 0;
     let currentText = '';
 
@@ -204,30 +204,45 @@ export default function HeroPage() {
 
 
 
+<div className="absolute z-20 bottom-17 right-6 md:right-10">
+  <button
+    ref={buttonRef}
+    onClick={togglePlayPause}
+    className="w-16 h-16 md:w-20 md:h-20 
+               bg-transparent border-none 
+               rounded-full flex items-center justify-center 
+               shadow-2xl transition-all duration-300 
+               animate-spin-slow"
+  >
+    {isPlaying ? (
+      <svg
+        className="w-6 h-6 md:w-8 md:h-8"
+        fill="#ffffff"
+        stroke="#ffffff"
+        viewBox="0 0 24 24"
+      >
+        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+      </svg>
+    ) : (
+      <svg
+        className="w-6 h-6 md:w-8 md:h-8 ml-1"
+        fill="#ffffff"
+        stroke="#ffffff"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    )}
+  </button>
+</div>
 
-      <div className="absolute z-20 bottom-8 right-6 md:right-10">
-        <button
-          ref={buttonRef}
-          onClick={togglePlayPause}
-          className="w-16 h-16 md:w-20 cursor-pointer md:h-20 bg-black/30 border-2 border-white/20 rounded-full flex items-center justify-center shadow-2xl hover:bg-black/40 transition-all duration-300"
-        >
-          {isPlaying ? (
-            <svg className="w-6 h-6 md:w-8 md:h-8 text-white/70" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6 md:w-8 md:h-8 text-white/70 ml-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          )}
-        </button>
-      </div>
+
 
       {!showForm && (
-        <div className="absolute bottom-8 right-24 md:right-40 z-20">
+        <div className="absolute bottom-20 right-24 md:right-40 z-20">
           <button
             onClick={toggleForm}
-            className="bg-gradient-to-r cursor-pointer from-blue-400 to-blue-100 h-[45px] md:h-[50px] w-[130px] md:w-[150px] px-6 md:px-8 text-black text-sm md:text-base font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-blue-300"
+            className="bg-gradient-to-r mb-20 cursor-pointer from-blue-400 to-blue-100 h-[45px] md:h-[50px] w-[130px] md:w-[150px] px-6 md:px-8 text-black text-sm md:text-base font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-blue-300"
           >
             Apply Now
           </button>
