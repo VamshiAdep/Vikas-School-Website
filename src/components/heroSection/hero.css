@@ -16,13 +16,14 @@ body {
   border: 1px solid #e2e8f0;
   animation: fadeIn 0.4s ease-in-out;
   max-width: 500px;
+  max-height: 600px;
   margin: 2rem auto;
 }
 
 /* Header */
 .admission-header {
   background: linear-gradient(to right, #dbeafe, #bfdbfe);
-  padding: 1.5rem 1rem 1rem;
+  padding: 1rem 1rem 1rem;
   text-align: center;
   position: relative;
 }
@@ -66,16 +67,16 @@ body {
 
 /* Form Body */
 .admission-body {
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 .admission-body input,
 .admission-body select {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid #cbd5e1;
   background: #f8fafc;

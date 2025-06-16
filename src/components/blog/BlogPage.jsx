@@ -89,7 +89,7 @@ const BlogPage = () => {
   return (
     <div className="blog-page">
       <header className="blog-header">
-        <h1>Vikas High School - Campus Chronicles</h1>
+        <h1>Vikas English Medium School - Campus Chronicles</h1>
         <p>Explore our vibrant celebrations, academic achievements, and authentic Indian cultural experiences.</p>
       </header>
 

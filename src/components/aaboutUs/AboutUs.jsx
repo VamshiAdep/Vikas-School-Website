@@ -35,22 +35,17 @@ const AboutUsPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const goToSlide = (index) => {
-    setCurrentImageIndex(index);
-  };
+  const goToSlide = (index) => setCurrentImageIndex(index);
 
   return (
-    <div
+    <section
       ref={aboutRef}
-      className={`min-h-[85vh] px-4 md:px-10 py-10 transition-all duration-1000 flex flex-col justify-center items-center overflow-hidden bg-cover bg-center bg-no-repeat ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`min-h-screen px-4 sm:px-6 lg:px-12 py-16 transition-all duration-1000 flex flex-col justify-center items-center overflow-hidden bg-cover bg-center bg-no-repeat ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       style={{
         backgroundImage:
           "url('https://imgs.search.brave.com/1w6HQLwFOgk4EpPsgP1VDRHKiPdGku_q2YwOGULNU6o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQx/Nzg1MjA4OC9waG90/by9iYWNrLXRvLXNj/aG9vbC1jb25jZXB0/LXNjaG9vbC1zdXBw/bGllcy10b3Atdmll/dy1pbi1jaGFsa2Jv/YXJkLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz1VeE1qdDVf/WE5KODZiaHZJUGI0/OV80T1hYcm8tb3FM/R2ZBSUZLQ0NoVzlF/PQ')",
       }}
     >
-      {/* Text Stroke Styles */}
       <style>
         {`
           .text-stroke {
@@ -58,7 +53,6 @@ const AboutUsPage = () => {
             -webkit-text-stroke: 1.5px white;
             text-shadow: none;
           }
-
           @keyframes spin-slow {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -69,30 +63,27 @@ const AboutUsPage = () => {
         `}
       </style>
 
-      <h1 className="text-6xl md:text-8xl font-extrabold mb-10 text-center uppercase tracking-wide text-stroke">
+      <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold my-8 text-center uppercase tracking-wider text-stroke">
         🎓 About Vikas High School
       </h1>
 
-      <div className="flex flex-col lg:flex-row justify-center items-center w-full max-w-6xl gap-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between w-full max-w-7xl gap-10">
         {/* Left Section */}
         <div
-          className={`flex-1 flex flex-col items-start justify-center gap-6 transition-all duration-700 delay-150 px-2 md:px-8 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-          }`}
+          className={`flex-1 flex flex-col items-center lg:items-start text-center lg:text-left transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
         >
-          <h2 className="text-[6px] sm:text-[44px] md:text-[44px] font-bold text-stroke font-[cursive] tracking-wide">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-stroke font-[cursive] mb-4">
             Where Young Minds Blossom
           </h2>
 
-          <p className="text-white text-lg leading-relaxed max-w-xl">
+          <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl">
             At Vikas, we nurture each child with care and creativity. Our educators
             blend traditional values with modern methods to inspire students daily.
             From early learning to board prep, we shape bright futures with joy.
             Learning here is more than education — it's transformation.
           </p>
 
-          {/* Circular Badge */}
-          <div className="relative w-[160px] h-[160px] mt-10 flex items-center justify-center">
+          <div className="relative w-40 h-40 mt-10 flex items-center justify-center">
             <div className="absolute w-full h-full animate-spin-slow">
               {[...Array(24)].map((_, i) => {
                 const angle = i * 15;
@@ -116,28 +107,39 @@ const AboutUsPage = () => {
                 );
               })}
             </div>
-            <div className="z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-300">
+            <div className="z-10 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md border-2 border-blue-300">
               <span className="text-yellow-500 text-2xl">✨</span>
             </div>
           </div>
         </div>
 
-        {/* Right Section - Only visible on md screens and above */}
-        <div className={`hidden md:flex flex-1 flex-col items-center transition-all duration-700 delay-200 ${
-          isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-        }`}>
-          {/* Desktop/Tablet Carousel */}
-          <div className="relative w-full h-[300px] max-w-md rounded-xl overflow-hidden border-4 border-white shadow-xl">
+        {/* Right Section */}
+        <div
+          className={`flex-1 flex flex-col items-center transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
+        >
+          {/* Mobile Static Image */}
+          <div className=" md:hidden w-full flex justify-center px-4">
+            <div className="w-[80%] max-w-sm aspect-[16/12] rounded-xl overflow-hidden">
+              <img
+                src={images[0]}
+                alt="School Mobile View"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+
+          {/* Desktop Carousel */}
+          <div className="hidden md:block relative w-full max-w-md aspect-[16/12] mt-6 rounded-xl overflow-hidden">
             {images.map((img, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
               >
                 <img
                   src={img}
-                  alt={`School ${index + 1}`}
+                  alt={`School Image ${index + 1}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -145,22 +147,22 @@ const AboutUsPage = () => {
             ))}
           </div>
 
-          {/* Dots */}
-          <div className="flex justify-center mt-4 space-x-3">
+          {/* Dot Indicators */}
+          <div className="hidden md:flex justify-center items-center mt-4 space-x-2">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3.5 h-3.5 rounded-full border border-purple-400 ${
-                  index === currentImageIndex ? 'bg-purple-600' : 'bg-gray-300'
-                } transition-all duration-300 hover:scale-125`}
+                className={`w-3.5 h-3.5 rounded-full border-2 transition-all duration-300 ${index === currentImageIndex
+                  ? 'bg-purple-600 border-purple-600 scale-110'
+                  : 'bg-white border-purple-400 hover:bg-purple-300'}`}
                 aria-label={`Slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
-    </div>
       </div>
+    </section>
   );
 };
 

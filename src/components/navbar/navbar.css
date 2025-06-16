@@ -30,6 +30,7 @@ body {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -41,6 +42,7 @@ body {
         transform: scale(0.8);
         opacity: 0;
     }
+
     to {
         transform: scale(1);
         opacity: 1;
@@ -51,6 +53,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -138,8 +141,6 @@ body {
     width: 70px;
     transition: var(--transition);
     overflow: hidden;
-    border: 2px solid var(--white);
-    box-shadow: var(--shadow);
 }
 
 .navbar.scrolled .image-container {
@@ -325,7 +326,8 @@ body {
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 1rem 2rem; /* FIXED: reduced top padding */
+        padding: 1rem 2rem;
+        /* FIXED: reduced top padding */
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -387,9 +389,9 @@ body {
         top: 0;
         left: 0;
         width: 100vw;
-        height: 100vh;
         background: #ffffff;
-        padding: 1rem 1.2rem 1rem; /* ✅ FIXED HERE — moved nav links closer to top */
+        padding: 1rem 1.2rem 1rem;
+        /* ✅ FIXED HERE — moved nav links closer to top */
         z-index: 999;
         transform: translateY(-100%);
         opacity: 0;
