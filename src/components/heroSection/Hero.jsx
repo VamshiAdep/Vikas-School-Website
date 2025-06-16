@@ -77,23 +77,8 @@ export default function HeroPage() {
   const containerRef = useRef(null);
   const buttonRef = useRef(null);
   const formRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [typedText, setTypedText] = useState('');
-
-  const togglePlayPause = (e) => {
-    e.stopPropagation();
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
   const toggleForm = () => {
     setShowForm((prev) => !prev);
     if (!showForm && window.gsap && formRef.current) {
@@ -118,7 +103,7 @@ export default function HeroPage() {
   useEffect(() => {
     injectStyle();
 
-    const fullText = "Welcome<br>to Vikas<br>HIGH School";
+    const fullText = "Welcome<br>to Vikas<br>English Medium<br> School";
     let i = 0;
     let currentText = '';
 
@@ -185,42 +170,37 @@ export default function HeroPage() {
     return () => clearTimeout(delayTimeout);
   }, []);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.autoplay = true;
+      videoRef.current.play().catch((e) => {
+        console.warn("Autoplay failed:", e);
+      });
+    }
+  }, []);
+
   return (
     <div ref={containerRef} className="relative h-[90vh] w-full overflow-hidden bg-transparent flex items-center justify-center">
       <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${showForm ? 'opacity-20' : 'opacity-100'}`}>
-        <video ref={videoRef} autoPlay muted  playsInline className="h-full w-full object-cover origin-center">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          defaultMuted
+          playsInline
+          preload="auto"
+          className="h-full w-full object-cover origin-center"
+        >
           <source src="/background-video.mp4" type="video/mp4" />
         </video>
       </div>
 
-<div className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none px-4 w-full text-center">
-  <h1
-    className="stroke-strong text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] xl:text-[72px] leading-tight font-extrabold uppercase"
-    dangerouslySetInnerHTML={{ __html: typedText }}
-  />
-</div>
-
-
-
-
-
-
-      <div className="absolute z-20 bottom-8 right-6 md:right-10">
-        <button
-          ref={buttonRef}
-          onClick={togglePlayPause}
-          className="w-16 h-16 md:w-20 cursor-pointer md:h-20 bg-black/30 border-2 border-white/20 rounded-full flex items-center justify-center shadow-2xl hover:bg-black/40 transition-all duration-300"
-        >
-          {isPlaying ? (
-            <svg className="w-6 h-6 md:w-8 md:h-8 text-white/70" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6 md:w-8 md:h-8 text-white/70 ml-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          )}
-        </button>
+      <div className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none px-4 w-full text-center">
+        <h1
+          className="stroke-strong text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] xl:text-[72px] leading-tight font-extrabold uppercase"
+          dangerouslySetInnerHTML={{ __html: typedText }}
+        />
       </div>
 
       {!showForm && (

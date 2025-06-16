@@ -4,31 +4,30 @@ import './navbar.css';
 import logo from '../assets/TSSS-Logo.jpg';
 
 const Navbar = () => {
-    const [isAboutDropdownOpen, setAboutDropdownOpen] = useState(false);
-    const [isAcademicsDropdownOpen, setAcademicsDropdownOpen] = useState(false);
-    const [isAddmissionDropdownOpen, setAddmissionDropdownOpen] = useState(false);
-    const [isWhyPEM, setWhyPEM] = useState(false);
-    const [isMenuOpen, setMenuOpen] = useState(false);
+    const [isAboutOpen, setIsAboutOpen] = useState(false);
+    const [isAcademicsOpen, setIsAcademicsOpen] = useState(false);
+    const [isAdmissionsOpen, setIsAdmissionsOpen] = useState(false);
+    const [isWhyPemOpen, setIsWhyPemOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-
-    const isMobile = window.innerWidth <= 768;
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        const handleScroll = () => setIsScrolled(window.scrollY > 10);
+
+        window.addEventListener('resize', handleResize);
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
-    const toggleAboutDropdown = () => setAboutDropdownOpen(!isAboutDropdownOpen);
-    const toggleAddmissionDropdown = () => setAddmissionDropdownOpen(!isAddmissionDropdownOpen);
-    const toggleWhyPEM = () => setWhyPEM(!isWhyPEM);
-    const toggleAcademicsDropdown = () => setAcademicsDropdownOpen(!isAcademicsDropdownOpen);
-    const toggleMenu = () => setMenuOpen(!isMenuOpen);
-    const closeMenu = () => setMenuOpen(false);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
-    // SVG pattern for background
     const svgPattern = (
         <svg className="navbar-svg-pattern" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -40,113 +39,122 @@ const Navbar = () => {
         </svg>
     );
 
+    const renderDropdown = (isOpen, items) =>
+        isOpen && (
+            <div className="dropdown-menu">
+                {items.map(({ href, label }) => (
+                    <a key={href} href={href} className="dropdown-item" onClick={closeMenu}>
+                        {label}
+                    </a>
+                ))}
+            </div>
+        );
+
     return (
         <>
+            {/* Admission Banner */}
             <div className="admission-marquee">
                 <div className="marquee-wrapper">
                     <div className="marquee">
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {Array(8).fill('Admission Open for 2025-26').join('     ')}
                     </div>
                     <div className="marquee">
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Admission Open for 2025-26 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {Array(8).fill('Admission Open for 2025-26').join('     ')}
                     </div>
                 </div>
             </div>
-            
+
+            {/* Navbar */}
             <div className="navbar-main-container">
                 <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                     {svgPattern}
                     <div className="navbar-title">
-                        <div className='image-container'>
-                            <img className='image' src={logo} alt="Logo" />
+                        <div className="image-container">
+                            <img className="image" src={logo} alt="Logo" />
                         </div>
-                        <div className='text-container'>
-                            <h5 href="/" className="navbar-brand">Vikas High School</h5>
-                            <p className="navbar-adress">Near Fehnegaon, Kamatghar, Bhiwandi, Thane 421302</p>
+                        <div className="text-container">
+                            <h5 className="navbar-brand">Vikas English Medium School</h5>
+                            <p className="navbar-adress">Near Akihla Padmashali Samaj Hall, Padmanagar, Bhiwandi, Thane 421302</p>
                         </div>
                     </div>
+
+                    {/* Mobile Menu Toggle */}
                     <div className="menu-icon" onClick={toggleMenu}>
-                        <div className="menu-icon-bar"></div>
-                        <div className="menu-icon-bar"></div>
-                        <div className="menu-icon-bar"></div>
+                        <div className="menu-icon-bar" />
+                        <div className="menu-icon-bar" />
+                        <div className="menu-icon-bar" />
                         <p className="menu-text">Menu</p>
                     </div>
-                    <div className={`navbar-overlay ${isMenuOpen ? 'active' : ''}`} onClick={closeMenu}></div>
 
+                    {/* Overlay for mobile */}
+                    <div className={`navbar-overlay ${isMenuOpen ? 'active' : ''}`} onClick={closeMenu} />
+
+                    {/* Navbar Links */}
                     <div className={`navbar-links ${isMenuOpen ? 'show' : ''}`}>
                         <a href="/" className="nav-link" onClick={closeMenu}>Home</a>
 
-                        <div className="nav-link"
-                            onMouseEnter={toggleAboutDropdown} onMouseLeave={toggleAboutDropdown}
-                            onClick={isMobile ? toggleAboutDropdown : undefined}
+                        {/* About Us Dropdown */}
+                        <div
+                            className="nav-link"
+                            onMouseEnter={() => !isMobile && setIsAboutOpen(true)}
+                            onMouseLeave={() => !isMobile && setIsAboutOpen(false)}
+                            onClick={() => isMobile && setIsAboutOpen(prev => !prev)}
                         >
                             About Us <FaChevronDown size={14} className="dropdown-icon" />
-                            {isAboutDropdownOpen && (
-                                <div className="dropdown-menu">
-                                    <a href="#aboutus" className="dropdown-item" onClick={closeMenu}>About School</a>
-                                    <a href="/management" className="dropdown-item" onClick={closeMenu}>Our Management</a>
-                                    <a href="/ChairmanMessage" className="dropdown-item" onClick={closeMenu}>Chairman's Message</a>
-                                    <a href="/OurPrincipalsView" className="dropdown-item" onClick={closeMenu}>Principal's Desk</a>
-                                    <a href="/Facility" className="dropdown-item" onClick={closeMenu}>P.E.M. Intiatives</a>
-                                    <a href="/Broucher" className="dropdown-item" onClick={closeMenu}>School Broucher</a>
-                                </div>
-                            )}
+                            {renderDropdown(isAboutOpen, [
+                                { href: '#aboutus', label: 'About School' },
+                                { href: '/management', label: 'Our Management' },
+                                { href: '/ChairmanMessage', label: "Chairman's Message" },
+                                { href: '/OurPrincipalsView', label: "Principal's Desk" },
+                                { href: '/Facility', label: 'P.E.M. Initiatives' },
+                                { href: '/Broucher', label: 'School Broucher' }
+                            ])}
                         </div>
 
-                        <div className="nav-link"
-                            onMouseEnter={toggleAcademicsDropdown} onMouseLeave={toggleAcademicsDropdown}
-                            onClick={isMobile ? toggleAcademicsDropdown : undefined}
+                        {/* Academics Dropdown */}
+                        <div
+                            className="nav-link"
+                            onMouseEnter={() => !isMobile && setIsAcademicsOpen(true)}
+                            onMouseLeave={() => !isMobile && setIsAcademicsOpen(false)}
+                            onClick={() => isMobile && setIsAcademicsOpen(prev => !prev)}
                         >
                             Academics <FaChevronDown size={14} className="dropdown-icon" />
-                            {isAcademicsDropdownOpen && (
-                                <div className="dropdown-menu">
-                                    <a href="/RightCurriculum" className="dropdown-item" onClick={closeMenu}>Curriculum</a>
-                                    <a href="/Toppers" className="dropdown-item" onClick={closeMenu}>Toppers</a>
-                                    <a href="#Calender" className="dropdown-item" onClick={closeMenu}>Calender</a>
-                                </div>
-                            )}
+                            {renderDropdown(isAcademicsOpen, [
+                                { href: '/RightCurriculum', label: 'Curriculum' },
+                                { href: '/Toppers', label: 'Toppers' },
+                                { href: '#Calender', label: 'Calendar' }
+                            ])}
                         </div>
 
-                        <div className="nav-link"
-                            onMouseEnter={toggleWhyPEM} onMouseLeave={toggleWhyPEM}
-                            onClick={isMobile ? toggleWhyPEM : undefined}
+                        {/* Why PEM Dropdown */}
+                        <div
+                            className="nav-link"
+                            onMouseEnter={() => !isMobile && setIsWhyPemOpen(true)}
+                            onMouseLeave={() => !isMobile && setIsWhyPemOpen(false)}
+                            onClick={() => isMobile && setIsWhyPemOpen(prev => !prev)}
                         >
                             Why P.E.M. <FaChevronDown size={14} className="dropdown-icon" />
-                            {isWhyPEM && (
-                                <div className="dropdown-menu">
-                                    <a href="/RightCurriculum" className="dropdown-item" onClick={closeMenu}>The Right Curriculum</a>
-                                    <a href="/RightFaculty" className="dropdown-item" onClick={closeMenu}>The Right Faculty</a>
-                                    <a href="/SchoolFacilities" className="dropdown-item" onClick={closeMenu}>The School Facilities</a>
-                                    <a href="/RightCapability" className="dropdown-item" onClick={closeMenu}>The Right Capability</a>
-                                </div>
-                            )}
+                            {renderDropdown(isWhyPemOpen, [
+                                { href: '/RightCurriculum', label: 'The Right Curriculum' },
+                                { href: '/RightFaculty', label: 'The Right Faculty' },
+                                { href: '/SchoolFacilities', label: 'The School Facilities' },
+                                { href: '/RightCapability', label: 'The Right Capability' }
+                            ])}
                         </div>
 
-                        <div className="nav-link"
-                            onMouseEnter={toggleAddmissionDropdown} onMouseLeave={toggleAddmissionDropdown}
-                            onClick={isMobile ? toggleAddmissionDropdown : undefined}
+                        {/* Admissions Dropdown */}
+                        <div
+                            className="nav-link"
+                            onMouseEnter={() => !isMobile && setIsAdmissionsOpen(true)}
+                            onMouseLeave={() => !isMobile && setIsAdmissionsOpen(false)}
+                            onClick={() => isMobile && setIsAdmissionsOpen(prev => !prev)}
                         >
                             Admissions <FaChevronDown size={14} className="dropdown-icon" />
-                            {isAddmissionDropdownOpen && (
-                                <div className="dropdown-menu">
-                                    <a href="/SchoolAdmissions" className="dropdown-item" onClick={closeMenu}>Addmissions For Schools 2025-26</a>
-                                </div>
-                            )}
+                            {renderDropdown(isAdmissionsOpen, [
+                                { href: '/SchoolAdmissions', label: 'Admissions For Schools 2025-26' }
+                            ])}
                         </div>
+
                         <a href="/Blog" className="nav-link" onClick={closeMenu}>Blogs</a>
                         <a href="/ContactUs" className="nav-link" onClick={closeMenu}>Contact Us</a>
                     </div>
