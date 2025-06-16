@@ -16,9 +16,9 @@ body {
 :root {
     --primary-blue: #4a9ff5;
     --light-blue: #e6f2ff;
-    --dark-blue: #1a73e8;
-    --text-color: #2c3e50;
-    --light-text: #5d8fc9;
+    --dark-blue: #2c3e50;
+    --text-color: #020202;
+    --light-text: #2c3e50;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -64,7 +64,7 @@ body {
     width: 100%;
     overflow: hidden;
     background: linear-gradient(90deg, var(--dark-blue), var(--primary-blue));
-    color: var(--white);
+    color: #fff;
     white-space: nowrap;
     box-sizing: border-box;
     padding: 6px 0;
@@ -85,6 +85,7 @@ body {
     display: inline-block;
     padding-right: 50px;
     font-weight: bold;
+    color: #fff;
 }
 
 /* Navbar container */
@@ -162,7 +163,7 @@ body {
 .navbar-brand {
     color: var(--dark-blue);
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: "800";
     margin: 0;
     transition: var(--transition);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -210,7 +211,7 @@ body {
 
 .nav-link {
     color: var(--dark-blue);
-    font-weight: 600;
+    font-weight: bold;
     font-size: 0.95rem;
     text-decoration: none;
     transition: var(--transition);
