@@ -32,7 +32,7 @@ const blogs = [
     title: 'Art & Culture Fest',
     date: 'April 15, 2025',
     excerpt: 'A colorful blend of Rangoli, folk dance, and live painting brought India’s diverse heritage to life.',
-    image: culturalprogramme,
+    image: 'https://kidactivities.net/wp-content/uploads/2018/02/image-164.jpg',
     category: 'Art & Culture',
   },
   {

@@ -29,7 +29,7 @@ const RightCapability = () => {
         <section className="capability-section">
             <h2 className="capability-title">Our Right Capabilities</h2>
             <p className="capability-caption">
-                At P.E.M. High School and Degree College, we empower our students through diverse capabilities that build a strong foundation for lifelong success.
+                At Vikas English Medium School, we empower our students through diverse capabilities that build a strong foundation for lifelong success.
             </p>
 
             <div className="capability-grid">
