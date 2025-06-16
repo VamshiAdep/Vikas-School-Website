@@ -22,7 +22,7 @@ export const ChairmanMessage = () => {
             Dear Students, Parents, and Well-Wishers,
           </p>
           <p className='chairmain-message-text'>
-            It gives me immense pleasure to welcome you to P.E.M High School & Jr. College, a proud institution under the aegis of Telugu Samaj Shikshan Sanstha (TSSS).
+            It gives me immense pleasure to welcome you to Vikas English Medium School, a proud institution under the aegis of Telugu Samaj Shikshan Sanstha (TSSS).
           </p>
           <p className='chairmain-message-text'>
             Founded with a vision to impart quality education rooted in values and excellence, our institution has steadily grown into a beacon of learning in Bhiwandi. At PEM, we believe that education is not merely the acquisition of knowledge but the holistic development of character, confidence, and compassion.

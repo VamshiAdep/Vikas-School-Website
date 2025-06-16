@@ -204,10 +204,10 @@ export default function HeroPage() {
       </div>
 
       {!showForm && (
-        <div className="absolute bottom-8 right-24 md:right-40 z-20">
+        <div className="absolute bottom-20 right-24 md:right-40 z-20">
           <button
             onClick={toggleForm}
-            className="bg-gradient-to-r cursor-pointer from-blue-400 to-blue-100 h-[45px] md:h-[50px] w-[130px] md:w-[150px] px-6 md:px-8 text-black text-sm md:text-base font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-blue-300"
+            className="bg-gradient-to-r mb-20 cursor-pointer from-blue-400 to-blue-100 h-[45px] md:h-[50px] w-[130px] md:w-[150px] px-6 md:px-8 text-black text-sm md:text-base font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-blue-300"
           >
             Apply Now
           </button>

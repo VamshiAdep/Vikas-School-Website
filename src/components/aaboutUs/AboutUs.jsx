@@ -118,7 +118,7 @@ const AboutUsPage = () => {
           className={`flex-1 flex flex-col items-center transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
         >
           {/* Mobile Static Image */}
-          <div className="block md:hidden w-full flex justify-center px-4">
+          <div className=" md:hidden w-full flex justify-center px-4">
             <div className="w-[80%] max-w-sm aspect-[16/12] rounded-xl overflow-hidden">
               <img
                 src={images[0]}

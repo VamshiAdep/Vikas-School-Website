@@ -6,15 +6,14 @@
 }
 
 .gallery-title {
-    font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
     margin-bottom: 4rem;
     font-weight: bold;
-    color: #222;
-    letter-spacing: 2px;
-    -webkit-text-stroke: 1px #222;
+    font-family: 'Bebas Neue', sans-serif;
     color: #fff;
+    -webkit-text-stroke: 1px #222;
 }
+
 
 .gallery-container {
     display: flex;
