@@ -187,10 +187,9 @@ export default function HeroPage() {
           ref={videoRef}
           autoPlay
           muted
-          defaultMuted
           playsInline
           preload="auto"
-          className="h-full w-full object-cover origin-center"
+          className="h-full w-full object-cover origin-center pointer-events-none select-none"
         >
           <source src="/background-video.mp4" type="video/mp4" />
         </video>

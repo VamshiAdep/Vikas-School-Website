@@ -7,16 +7,15 @@ const ContactUs = () => {
       <div className="contact-container">
         <div className="map-container">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4533.397486619348!2d72.9779207!3d19.194385999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b93b00000001%3A0xdb2b2d6c931de5d4!2sSahyog%20College%20of%20Hotel%20%26%20Tourism%20Management%20College%20in%20Thane%20%7C%20Tourism%20%26%20Aviation%20Management%20%7C%20BA%20Travel%20%26%20Tourism%20College!5e1!3m2!1sen!2sin!4v1749814684378!5m2!1sen!2sin"
+            title="Vikas English Medium School"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.416964496486!2d73.0558634!3d19.2872442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7bd0a1c58aa93%3A0xb6bd70968b23b717!2sVikas%20English%20Medium%20School!5e0!3m2!1sen!2sin!4v1720955597919!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            allowFullScreen
+            allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="School Location"
-          />
-
+          ></iframe>
         </div><br></br>
 
         <div className="contact-info">
@@ -34,12 +33,12 @@ const ContactUs = () => {
 
           <div className="info-block">
             <strong>📧 EMAIL:</strong>
-            <p>vikasschool123@gmail.com</p>
+            <p>vikasschool236@gmail.com</p>
           </div>
 
           <div className="info-block">
             <strong>📞 PHONE:</strong>
-            <p>+91 8655465553</p>
+            <p>+91 8087784766</p>
           </div>
 
           <form className="contact-form">
