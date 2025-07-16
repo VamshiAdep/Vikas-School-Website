@@ -1,5 +1,5 @@
 import React from 'react'
-import image1 from "../assets/carouselImages/image1.jpg"
+import initiativesPhoto from "../assets/schoolImages/initiativesPhoto.jpg"
 import "./facility.css"
 export default function Facility() {
     return (
@@ -7,7 +7,7 @@ export default function Facility() {
 
             <div className="image_main_container">
                 <div className="pem-image">
-                    <img src={image1} alt="PEM High School Building" />
+                    <img src={initiativesPhoto} alt="PEM High School Building" />
                 </div>
             </div>
 

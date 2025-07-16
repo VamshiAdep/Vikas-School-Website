@@ -107,7 +107,7 @@ const Navbar = () => {
                                 <a href="/ChairmanMessage" className="dropdown-item">Chairman's Message</a>
                                 <a href="/OurPrincipalsView" className="dropdown-item">Principal's Desk</a>
                                 <a href="/Facility" className="dropdown-item">Vikas Initiatives</a>
-                                <a href="/Broucher" className="dropdown-item">School Brochure</a>
+                                {/* <a href="/Broucher" className="dropdown-item">School Brochure</a> */}
                             </div>
                         </div>
 
@@ -116,7 +116,7 @@ const Navbar = () => {
                             <div className={`dropdown-menu ${isAcademicsDropdownOpen ? 'active' : ''}`}>
                                 <a href="/RightCurriculum" className="dropdown-item">Curriculum</a>
                                 <a href="/Toppers" className="dropdown-item">Toppers</a>
-                                <a href="#Calender" className="dropdown-item">Calendar</a>
+                                {/* <a href="#Calender" className="dropdown-item">Calendar</a> */}
                             </div>
                         </div>
 

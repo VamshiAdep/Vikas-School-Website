@@ -13,7 +13,6 @@ import BolliSatyanarayan from '../assets/trusteeImages/BolliSatyanarayan1.png';
 import ChennaDevarajam from '../assets/trusteeImages/ChennaDevarajam1.png';
 import SamalRavindra from '../assets/trusteeImages/SamalRavindra1.png';
 import PamuManohar from '../assets/trusteeImages/PamuManohar1.png';
-import tributeImage from '../assets/trusteeImages/tributeImage.png';
 import MamidalaMallesham from '../assets/trusteeImages/MamidalaMallesham.png';
 import AnkamShankar from '../assets/trusteeImages/AnkamShankar.png';
 import LaxmanBallaya from '../assets/trusteeImages/LaxmanBallaya.png';

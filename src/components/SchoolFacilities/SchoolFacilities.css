@@ -43,27 +43,19 @@
   position: relative;
 }
 
-/* Horizontal scrolling carousel */
-.facilities-slider-wrapper {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
 .facilities-slider {
   display: flex;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
   animation: scroll 40s linear infinite;
   width: max-content;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.facilities-slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .facility-card {

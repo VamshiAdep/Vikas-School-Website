@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './SchoolGallery.css';
-import image1 from '../assets/schoolImages/schoolImage2.jpg';
-import image2 from '../assets/schoolImages/schoolImage.jpg';
-import imageLab from '../assets/schoolImages/computterLab.jpg';
-import ChemistryLab from '../assets/schoolImages/ChemistryLab.JPG';
-import picnicImage from '../assets/schoolImages/picnicImage.jpeg';
-import image3 from '../assets/carouselImages/image3.jpg';
-import image4 from '../assets/carouselImages/image4.jpg';
-import image5 from '../assets/carouselImages/image1.jpg';
-import independenceDayImage from '../assets/blogImages/indipendenceDay.jpg'
-import yogaDayImage from '../assets/blogImages/Yogaday.jpeg'
-import Dahihandi from '../assets/blogImages/Dahihandi.jpeg'
-import DandiyaCele from '../assets/blogImages/DandiyaCele.jpeg'
+import studPhoto from '../assets/schoolImages/studPhoto.jpg';
+import yoga from '../assets/schoolImages/yoga.jpg';
+import BlueDayPhoto from '../assets/schoolImages/BlueDayPhoto.jpg';
+import computterLab from '../assets/schoolImages/computterLab.JPG';
+import FairwellPhoto from '../assets/schoolImages/FairwellPhoto.jpg';
+import holiPhoto from '../assets/schoolImages/holiPhoto.jpg';
+import holiPhoto2 from '../assets/schoolImages/holiPhoto2.jpg';
+import kidsPhoto from '../assets/schoolImages/kidsPhoto.jpg';
+import jrKidsPhoto from '../assets/schoolImages/jrKidsPhoto.jpg';
+import FlagPhoto from '../assets/schoolImages/FlagPhoto.jpg'
+import rakhiMaking from '../assets/schoolImages/rakhiMaking.jpg'
+import navratriPHoto from '../assets/schoolImages/navratriPHoto.jpg'
 
-
-const imagePaths = [image1, image2, image5, image4, imageLab, ChemistryLab, image3, DandiyaCele, picnicImage, yogaDayImage, independenceDayImage, Dahihandi];
+const imagePaths = [studPhoto, yoga, jrKidsPhoto, kidsPhoto, BlueDayPhoto, computterLab, holiPhoto, navratriPHoto, FairwellPhoto, rakhiMaking, FlagPhoto, holiPhoto2];
 const videoIds = [
     'qLU4dpXP0B8',
     'iuviq3yvUhc',

@@ -45,11 +45,11 @@ const Footer = () => {
                             </li>
                             <li>
                                 <span className="icon-circle"><FaEnvelope size={'20px'} /></span>
-                                vikasschool123@gmail.com
+                                vikasschool236@gmail.com
                             </li>
                             <li>
                                 <span className="icon-circle"><FaPhoneAlt size={'20px'} /></span>
-                                7887681816 / 8655465553 / 8625025367
+                                +918087784766
                             </li>
                         </ul>
                     </div>
@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                © 2025 P.E.M High school & Jr College | All Rights Reserved
+                © 2025 Vikas English Medium School | All Rights Reserved
             </div>
         </footer>
     );

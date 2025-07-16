@@ -3,7 +3,7 @@ import './SchoolFacilities.css';
 import Library from '../assets/schoolFacilityImages/Library.JPG';
 import imageLab from '../assets/schoolImages/computterLab.jpg';
 import ChemistryLab from '../assets/schoolImages/ChemistryLab.JPG';
-import image1 from '../assets/schoolImages/schoolImage2.jpg';
+// import image1 from '../assets/schoolImages/schoolImage2.jpg';
 import yogaDayImage from '../assets/blogImages/Yogaday.jpeg';
 
 const facilities = [
@@ -22,11 +22,11 @@ const facilities = [
     description: 'High-speed internet and the latest computers to enhance digital literacy.',
     image: imageLab,
   },
-  {
-    title: 'Sports Grounds',
-    description: 'Expansive sports facilities including football, basketball, and cricket grounds.',
-    image: image1,
-  },
+  // {
+  //   title: 'Sports Grounds',
+  //   description: 'Expansive sports facilities including football, basketball, and cricket grounds.',
+  //   image: image1,
+  // },
   {
     title: 'Auditorium',
     description: 'A spacious auditorium for cultural events, competitions, and seminars.',
@@ -45,7 +45,7 @@ const SchoolFacilities = () => {
 
       <div className="facilities-slider-wrapper">
         <div className="facilities-slider">
-          {[...facilities, ...facilities].map((facility, index) => (
+          {[...facilities].map((facility, index) => (
             <div className="facility-card" key={index}>
               <img src={facility.image} alt={facility.title} />
               <h3>{facility.title}</h3>
