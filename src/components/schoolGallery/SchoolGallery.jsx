@@ -11,6 +11,7 @@ import navratriPHoto from '../assets/schoolImages/navratriPHoto.jpg';
 import rakhiMaking from '../assets/schoolImages/rakhiMaking.jpg';
 import studPhoto from '../assets/schoolImages/studPhoto.jpg';
 import yoga from '../assets/schoolImages/yoga.jpg';
+import React from 'react';
 import './SchoolGallery.css';
 
 const imagePaths = [studPhoto, yoga, jrKidsPhoto, kidsPhoto, BlueDayPhoto, computterLab, holiPhoto, navratriPHoto, FairwellPhoto, rakhiMaking, FlagPhoto, holiPhoto2];
@@ -40,7 +41,7 @@ const SchoolGallery = () => {
         setCurrentVideo(videoIds[prevIndex]);
     };
 
-    return(
+    return (
         <section className="gallery-section">
             <h2 className="gallery-title">Our School Gallery</h2>
 
