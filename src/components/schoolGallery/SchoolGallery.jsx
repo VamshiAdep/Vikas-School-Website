@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import BlueDayPhoto from '../assets/schoolImages/BlueDayPhoto.jpg';
+import React, { useState, useEffect } from 'react';
+import './SchoolGallery.css';
 import studPhoto from '../assets/schoolImages/studPhoto.jpg';
 import yoga from '../assets/schoolImages/yoga.jpg';
-import './SchoolGallery.css';
-// import computterLab from '../assets/schoolImages/computterLab.JPG';
+import BlueDayPhoto from '../assets/schoolImages/BlueDayPhoto.jpg';
+import computterLab from '../assets/schoolImages/computterLab.JPG';
 import FairwellPhoto from '../assets/schoolImages/FairwellPhoto.jpg';
-import FlagPhoto from '../assets/schoolImages/FlagPhoto.jpg';
 import holiPhoto from '../assets/schoolImages/holiPhoto.jpg';
 import holiPhoto2 from '../assets/schoolImages/holiPhoto2.jpg';
-import jrKidsPhoto from '../assets/schoolImages/jrKidsPhoto.jpg';
 import kidsPhoto from '../assets/schoolImages/kidsPhoto.jpg';
-import navratriPHoto from '../assets/schoolImages/navratriPHoto.jpg';
-import rakhiMaking from '../assets/schoolImages/rakhiMaking.jpg';
+import jrKidsPhoto from '../assets/schoolImages/jrKidsPhoto.jpg';
+import FlagPhoto from '../assets/schoolImages/FlagPhoto.jpg'
+import rakhiMaking from '../assets/schoolImages/rakhiMaking.jpg'
+import navratriPHoto from '../assets/schoolImages/navratriPHoto.jpg'
 
 const imagePaths = [studPhoto, yoga, jrKidsPhoto, kidsPhoto, BlueDayPhoto, computterLab, holiPhoto, navratriPHoto, FairwellPhoto, rakhiMaking, FlagPhoto, holiPhoto2];
 const videoIds = [
