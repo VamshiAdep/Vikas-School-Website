@@ -40,7 +40,7 @@ const SchoolGallery = () => {
         setCurrentVideo(videoIds[prevIndex]);
     };
 
-    return (
+    return(
         <section className="gallery-section">
             <h2 className="gallery-title">Our School Gallery</h2>
 
