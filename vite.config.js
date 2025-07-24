@@ -1,13 +1,15 @@
-import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import react from '@vitejs/plugin-react'; // ✅ Add this
+import { defineConfig } from 'vite';
 
 const viteConfig = defineConfig({
   plugins: [
-    tailwindcss(),
+    react(),         // ✅ Enables React + automatic JSX transform
+    tailwindcss(),   // already added
   ],
   server: {
-    host: '0.0.0.0', // this exposes the dev server to your local network
-    port: 5173, // optional, or change it
+    host: '0.0.0.0',
+    port: 5173,
   },
 });
 
