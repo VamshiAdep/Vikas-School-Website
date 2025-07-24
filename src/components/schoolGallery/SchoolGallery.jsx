@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import BlueDayPhoto from '../assets/schoolImages/BlueDayPhoto.jpg';
-import computterLab from '../assets/schoolImages/computterLab.JPG';
+import computterLab from '../assets/schoolImages/computterLab.jpg';
+
 import FairwellPhoto from '../assets/schoolImages/FairwellPhoto.jpg';
 import FlagPhoto from '../assets/schoolImages/FlagPhoto.jpg';
 import holiPhoto from '../assets/schoolImages/holiPhoto.jpg';
