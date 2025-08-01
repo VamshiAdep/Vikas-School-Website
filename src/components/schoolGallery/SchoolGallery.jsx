@@ -16,10 +16,10 @@ import './SchoolGallery.css';
 
 const imagePaths = [studPhoto, yoga, jrKidsPhoto, kidsPhoto, BlueDayPhoto, computterLab, holiPhoto, navratriPHoto, FairwellPhoto, rakhiMaking, FlagPhoto, holiPhoto2];
 const videoIds = [
-    'qLU4dpXP0B8',
-    'iuviq3yvUhc',
-    'jzQSc584XZ8',
-    'F1MaojJovbo'
+    'INw_eX2pAqY',
+    'UT-vOUfyDh0',
+    'HVxnunKf9R8',
+    'jBPOzemVQVQ'
 ];
 
 const SchoolGallery = () => {

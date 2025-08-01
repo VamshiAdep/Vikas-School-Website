@@ -98,27 +98,46 @@
   line-height: 1.5;
 }
 
-/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .facilities-slider {
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: none; /* Disable auto-scroll on tablets and smaller devices */
+  }
+}
+
 @media (max-width: 768px) {
   .facilities-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .facilities-caption {
-    font-size: 1rem;
-    padding: 15px;
+    font-size: 0.95rem;
+    padding: 12px;
+    margin-bottom: 30px;
+  }
+
+  .facilities-slider {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
 
   .facility-card {
     padding: 15px;
-    width: 250px;
+    width: 90%;
+    max-width: 320px;
+    scroll-snap-align: center;
   }
 
   .facility-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .facility-card p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 }
