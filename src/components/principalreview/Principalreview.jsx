@@ -1,15 +1,15 @@
 import React from 'react';
 import './pincipalreview.css';
-import jagdeshHM from '../assets/priencpalImages/jagdeshHM.png'
+import RahulHM from '../assets/priencpalImages/RahulHM.png'
 
 
 const Principalreview = () => {
     const Principals = [
         {
-            name: "Mr. Jagdish Desale",
-            positon: "Principal-primary Section",
+            name: "Mr. Rahul",
+            positon: "Principal",
             message: "My mission is to inspire and guide young minds to achieve their fullest potential.",
-            image: jagdeshHM,
+            image: RahulHM,
         },
     ];
 
