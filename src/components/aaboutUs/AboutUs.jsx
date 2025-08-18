@@ -69,7 +69,7 @@ const AboutUsPage = () => {
           ))}
 
           {/* Dots */}
-          <div className="carousel-dots">
+          {/* <div className="carousel-dots">
             {images.map((_, index) => (
               <button
                 key={index}
@@ -78,7 +78,7 @@ const AboutUsPage = () => {
                 onClick={() => setCurrentImageIndex(index)}
               ></button>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

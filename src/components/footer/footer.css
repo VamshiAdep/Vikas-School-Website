@@ -113,7 +113,7 @@
 }
 
 .icon-circle {
-    background: #1a1a1a;
+    background: #003390;
     /* dark circle now */
     color: #fff;
     border-radius: 50%;
@@ -147,6 +147,10 @@
 @media (max-width: 1024px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer {
+        margin: .5rem;
     }
 }
 

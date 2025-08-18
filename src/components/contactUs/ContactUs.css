@@ -142,12 +142,13 @@
     box-shadow: 0 4px 10px rgba(0, 64, 128, 0.3);
 }
 
-/* ========================
-   ✅ Responsiveness
-   ======================== */
-
 /* Tablet */
 @media (max-width: 1024px) {
+    .contact-section {
+        margin: 2rem 1.5rem;
+        padding: 2.5rem 1.5rem;
+    }
+
     .contact-container {
         flex-direction: column;
         align-items: center;
@@ -157,29 +158,58 @@
 
     .map-container {
         width: 100%;
+        max-width: 100%;
         height: 300px;
     }
 
     .contact-info {
         width: 100%;
+        max-width: 100%;
         height: auto;
+        padding: 1.8rem;
     }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
+    .contact-section {
+        margin: 1.5rem 1rem;
+        padding: 2rem 1rem;
+    }
+
     .contact-title {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-container {
+        gap: 1rem;
+        width: 100%;
+        padding: 0;
+    }
+
+    .map-container {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 250px;
+        border-radius: 12px;
     }
 
     .contact-info {
-        padding: 1.5rem;
+        width: 100%;
+        padding: 1.5rem 1rem;
+        border-radius: 12px;
     }
 
     .contact-form input,
     .contact-form textarea {
         font-size: 14px;
         padding: 10px 12px;
+    }
+
+    .contact-form textarea {
+        height: 100px;
     }
 
     .contact-form button {
