@@ -111,7 +111,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
@@ -124,7 +124,7 @@
   .hero-text h1 {
     font-size: 2.2rem;
   }
-}
+} */
 
 .form-section {
   display: flex;
@@ -245,9 +245,84 @@ select:focus {
   background-color: #003366;
 }
 
-/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    padding-top: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-image {
+    margin-top: 1.5rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 1rem;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+
   .form-row {
     flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .phone-input {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  input,
+  select {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 0.8rem;
   }
 }
