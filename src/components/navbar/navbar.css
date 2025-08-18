@@ -59,33 +59,9 @@ body {
     }
 }
 
-/* Marquee styles */
-.admission-marquee {
-    width: 100%;
-    overflow: hidden;
-    background: linear-gradient(90deg, var(--dark-blue), var(--primary-blue));
-    color: #fff;
-    white-space: nowrap;
-    box-sizing: border-box;
-    padding: 6px 0;
-    font-size: 0.9rem;
-    font-weight: 500;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 10;
-}
-
-.marquee-wrapper {
-    display: flex;
-    width: max-content;
-    animation: marquee-scroll 20s linear infinite;
-}
-
-.marquee {
-    display: inline-block;
-    padding-right: 50px;
-    font-weight: bold;
-    color: #fff;
+.main-container {
+    padding: 1rem 2rem;
+    background-color: #fff;
 }
 
 /* Navbar container */
@@ -99,7 +75,6 @@ body {
 /* Main navbar styles */
 .navbar {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background: white;
@@ -109,6 +84,7 @@ body {
     box-shadow: var(--shadow);
     overflow: visible;
     animation: scaleIn 0.5s ease-out;
+    border-radius: 1rem;
 }
 
 .navbar.scrolled {
@@ -162,7 +138,7 @@ body {
 
 .navbar-brand {
     color: var(--dark-blue);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: "800";
     margin: 0;
     transition: var(--transition);
@@ -170,7 +146,7 @@ body {
 }
 
 .navbar.scrolled .navbar-brand {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .navbar-adress {
@@ -200,7 +176,7 @@ body {
 /* Navbar links and dropdowns */
 .navbar-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     position: relative;
     align-items: center;
     justify-content: flex-end;
@@ -212,7 +188,7 @@ body {
 .nav-link {
     color: var(--dark-blue);
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.86rem;
     text-decoration: none;
     transition: var(--transition);
     position: relative;

@@ -1,219 +1,110 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { X } from 'lucide-react';
-import './hero.css';
+import React from "react";
+import "./hero.css";
 
-const injectStyle = () => {
-  const style = document.createElement('style');
-  style.innerHTML = `
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-    .stroke-strong {
-      font-family: 'Pacifico', cursive;
-      -webkit-text-stroke: 2px #fff;
-      text-stroke: 2px #fff;
-      color: black;
-    }
-  `;
-  document.head.appendChild(style);
-};
-
-const AdmissionForm = ({ isOpen, onClose, formRef }) => {
-  const [formData, setFormData] = useState({
-    studentName: '',
-    parentName: '',
-    currentStd: '',
-    mobileNo: '',
-    emailId: '',
-    city: ''
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = () => {
-    if (!formData.studentName || !formData.parentName || !formData.currentStd || !formData.mobileNo) {
-      alert('Please fill in all required fields');
-      return;
-    }
-    alert('Admission form submitted successfully!');
-    console.log('Form submitted:', formData);
-    onClose();
-  };
-
-  if (!isOpen) return null;
-
+export default function Hero() {
   return (
-    <div ref={formRef} className="absolute z-30 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md mx-4">
-      <div className="admission-container">
-        <div className="admission-header">
-          <button onClick={onClose} className="admission-close-btn">
-            <X className="w-5 h-5 text-gray-600" />
-          </button>
-          <img className='' src="src/components/assets/TSSS-Logo.jpg" alt="" />
-          <h1>Admissions Open for<br />2025-26</h1>
-        </div>
-        <div className="admission-body">
-          <input name="studentName" value={formData.studentName} onChange={handleInputChange} placeholder="Student Name*" />
-          <input name="parentName" value={formData.parentName} onChange={handleInputChange} placeholder="Parent Name" />
-          <select name="currentStd" value={formData.currentStd} onChange={handleInputChange} required>
-            <option value="">Current Std</option>
-            {["Nursery", "KG", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"].map(std => (
-              <option key={std} value={std}>{std} Standard</option>
-            ))}
-          </select>
-          <input type="tel" name="mobileNo" value={formData.mobileNo} onChange={handleInputChange} placeholder="Mobile No*" />
-          <input type="email" name="emailId" value={formData.emailId} onChange={handleInputChange} placeholder="Email ID" />
-          <input name="city" value={formData.city} onChange={handleInputChange} placeholder="City*" />
-          <button onClick={handleSubmit} className="admission-submit-btn">Submit</button>
-        </div>
+    <div className="hero-wrapper">
+      <div className="Addmission-container">
+        <p>Addmission's Are Open for 2025-2026</p>
       </div>
-    </div>
-  );
-};
-
-export default function HeroPage() {
-  const videoRef = useRef(null);
-  const containerRef = useRef(null);
-  const buttonRef = useRef(null);
-  const formRef = useRef(null);
-  const [showForm, setShowForm] = useState(false);
-  const [typedText, setTypedText] = useState('');
-  const toggleForm = () => {
-    setShowForm((prev) => !prev);
-    if (!showForm && window.gsap && formRef.current) {
-      window.gsap.fromTo(formRef.current, { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'back.out(1.7)' });
-    }
-  };
-
-  const closeForm = () => {
-    if (window.gsap && formRef.current) {
-      window.gsap.to(formRef.current, {
-        y: 100,
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power2.in',
-        onComplete: () => setShowForm(false),
-      });
-    } else {
-      setShowForm(false);
-    }
-  };
-
-  useEffect(() => {
-    injectStyle();
-
-    const fullText = "Welcome<br>to Vikas<br>English Medium<br> School";
-    let i = 0;
-    let currentText = '';
-
-    const delayTimeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        if (i >= fullText.length) {
-          clearInterval(interval);
-          return;
-        }
-        currentText += fullText[i];
-        setTypedText(currentText);
-        i++;
-      }, 80);
-    }, 3000);
-
-    if (window.gsap && window.ScrollTrigger) {
-      window.gsap.registerPlugin(window.ScrollTrigger);
-
-      const ctx = window.gsap.context(() => {
-        window.gsap.set(videoRef.current, {
-          scale: 0.1,
-          opacity: 0,
-        });
-
-        window.gsap.to(videoRef.current, {
-          scale: 1,
-          opacity: 1,
-          duration: 1.5,
-          ease: 'expo.out',
-          delay: 0.3,
-          onComplete: setupScrollAnimation,
-        });
-
-        if (buttonRef.current) {
-          window.gsap.to(buttonRef.current, {
-            rotation: 360,
-            duration: 4,
-            repeat: -1,
-            ease: 'none',
-          });
-        }
-
-        function setupScrollAnimation() {
-          window.ScrollTrigger.create({
-            trigger: containerRef.current,
-            start: 'top top',
-            end: '+=500',
-            scrub: 0.5,
-            onUpdate: (self) => {
-              const scale = 1 - self.progress * 0.5;
-              window.gsap.to(videoRef.current, {
-                scale,
-                duration: 0.1,
-                ease: 'power1.out',
-              });
-            },
-          });
-        }
-      }, containerRef);
-
-      return () => ctx.revert();
-    }
-
-    return () => clearTimeout(delayTimeout);
-  }, []);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = true;
-      videoRef.current.autoplay = true;
-      videoRef.current.play().catch((e) => {
-        console.warn("Autoplay failed:", e);
-      });
-    }
-  }, []);
-
-  return (
-    <div ref={containerRef} className="relative h-[90vh] w-full overflow-hidden bg-transparent flex items-center justify-center">
-      <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${showForm ? 'opacity-20' : 'opacity-100'}`}>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          className="h-full w-full object-cover origin-center pointer-events-none select-none"
-        >
-          <source src="/background-video.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div className="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none px-4 w-full text-center">
-        <h1
-          className="stroke-strong text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] xl:text-[72px] leading-tight font-extrabold uppercase"
-          dangerouslySetInnerHTML={{ __html: typedText }}
-        />
-      </div>
-
-      {!showForm && (
-        <div className="absolute bottom-20 right-24 md:right-40 z-20">
-          <button
-            onClick={toggleForm}
-            className="bg-gradient-to-r mb-20 cursor-pointer from-blue-400 to-blue-100 h-[45px] md:h-[50px] w-[130px] md:w-[150px] px-6 md:px-8 text-black text-sm md:text-base font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-blue-300"
-          >
-            Apply Now
-          </button>
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Welcome to Vikas School</h1>
+            <p>
+              Nurturing young minds with knowledge, values, and innovation.
+              Building leaders for tomorrow with holistic education.
+            </p>
+            <div className="hero-buttons">
+              <button className="btn primary">Admissions Open</button>
+            </div>
+          </div>
         </div>
-      )}
+        <div className="form-section">
+          <div className="form-container">
+            <h2>Connect With Our School Experts</h2>
 
-      <AdmissionForm isOpen={showForm} onClose={closeForm} formRef={formRef} />
+            <form>
+              {/* Row 1 */}
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Full Name *</label>
+                  <input type="text" placeholder="Enter your full name" required />
+                </div>
+                <div className="form-group">
+                  <label>Phone Number *</label>
+                  <div className="phone-input">
+                    <select>
+                      <option>+91</option>
+                      <option>+1</option>
+                      <option>+44</option>
+                    </select>
+                    <input type="tel" placeholder="Enter your no." required />
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2 */}
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Email Id *</label>
+                  <input type="email" placeholder="abc@xyz.com" required />
+                </div>
+                <div className="form-group">
+                  <label>Class You Are Looking For *</label>
+                  <select required>
+                    <option value="">Select Class</option>
+                    <option>Kindergarten</option>
+                    <option>1st Class</option>
+                    <option>2nd Class</option>
+                    <option>3rd Class</option>
+                    <option>4th Class</option>
+                    <option>5th Class</option>
+                    <option>6th Class</option>
+                    <option>7th Class</option>
+                    <option>8th Class</option>
+                    <option>9th Class</option>
+                    <option>10th Class</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Row 3 */}
+              {/* <div className="form-row">
+              <div className="form-group full-width">
+                <label>Program You Are Interested In *</label>
+                <select required>
+                  <option value="">Select Program</option>
+                  <option>Day School</option>
+                  <option>Boarding School</option>
+                  <option>After-School Activities</option>
+                </select>
+              </div>
+            </div> */}
+
+              {/* Terms */}
+              <div className="form-row">
+                <div className="form-group full-width terms">
+                  <input type="checkbox" id="consent" required />
+                  <label htmlFor="consent">
+                    By entering these details, I agree that Vikas School and its
+                    staff can contact me with updates & notifications via Email,
+                    SMS, WhatsApp, and calls. This consent will override any DNC /
+                    NDNC registration.
+                  </label>
+                </div>
+              </div>
+
+              {/* Submit */}
+              <div className="form-row">
+                <button type="submit" className="submit-btn">
+                  SUBMIT
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
