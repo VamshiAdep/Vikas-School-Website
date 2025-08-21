@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="main-container">
             {isMobileMenuOpen && <div className="mobile-backdrop"></div>}
 
-            <div className="navbar-main-container">
+            <div className="navbar-main-container"> 
                 <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
                     {svgPattern}
                     <div className="navbar-title">
@@ -106,7 +106,7 @@ const Navbar = () => {
                         </div>
 
                         <div className="nav-link" onClick={toggleAddmissionDropdown}>
-                            Admissions <FaChevronDown size={14} className="dropdown-icon" />
+                            Admissions <FaChevronDown size={14} color='#fff' className="dropdown-icon" />
                             <div className={`dropdown-menu ${isAddmissionDropdownOpen ? 'active' : ''}`}>
                                 <a href="/SchoolAdmissions" className="dropdown-item">Admissions For Schools 2025-26</a>
                             </div>

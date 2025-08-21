@@ -20,12 +20,21 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="form-section">
+        <div className="hero-img-container">
+          <img
+            src="https://amityonline.com/_next/image?url=https%3A%2F%2Fstatic.amityonline.com%2F_s%2Fmob_banner_0972a9f1f1.webp&w=2048&q=75"
+          />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+{/* <div className="form-section">
           <div className="form-container">
             <h2>Connect With Our School Experts</h2>
 
             <form>
-              {/* Row 1 */}
               <div className="form-row">
                 <div className="form-group">
                   <label>Full Name *</label>
@@ -44,7 +53,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Row 2 */}
               <div className="form-row">
                 <div className="form-group">
                   <label>Email Id *</label>
@@ -69,20 +77,18 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Row 3 */}
-              {/* <div className="form-row">
-              <div className="form-group full-width">
-                <label>Program You Are Interested In *</label>
-                <select required>
-                  <option value="">Select Program</option>
-                  <option>Day School</option>
-                  <option>Boarding School</option>
-                  <option>After-School Activities</option>
-                </select>
+              <div className="form-row">
+                <div className="form-group full-width">
+                  <label>Program You Are Interested In *</label>
+                  <select required>
+                    <option value="">Select Program</option>
+                    <option>Day School</option>
+                    <option>Boarding School</option>
+                    <option>After-School Activities</option>
+                  </select>
+                </div>
               </div>
-            </div> */}
 
-              {/* Terms */}
               <div className="form-row">
                 <div className="form-group full-width terms">
                   <input type="checkbox" id="consent" required />
@@ -95,7 +101,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Submit */}
               <div className="form-row">
                 <button type="submit" className="submit-btn">
                   SUBMIT
@@ -103,8 +108,4 @@ export default function Hero() {
               </div>
             </form>
           </div>
-        </div>
-      </section>
-    </div>
-  );
-}
+        </div> */}

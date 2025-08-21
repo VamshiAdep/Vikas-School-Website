@@ -26,9 +26,9 @@
 
 .hero {
   display: flex;
-  justify-content: space-between;
-  min-height: 80vh;
-  background-image: url('https://amityonline.com/_sb/Frame_1171278133_34d08417cd.png');
+  justify-content: center;
+  max-height: 60vh;
+  background-image: url('https://amityonline.com/_next/image?url=https%3A%2F%2Fstatic.amityonline.com%2F_s%2Fdesktop_banner_background_2da7e2f4ca.webp&w=3840&q=75s');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
@@ -48,6 +48,9 @@
   align-items: center;
   background-color: transparent;
   padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Text section */
@@ -56,6 +59,10 @@
   font-weight: 700;
   color: #004080;
   margin-bottom: 1rem;
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 .hero-text p {
@@ -64,12 +71,15 @@
   margin-bottom: 1.5rem;
   line-height: 1.6;
   max-width: 550px;
+  text-align: center;
 }
 
 /* Buttons */
 .hero-buttons {
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -107,6 +117,23 @@
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+.hero-img-container {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5rem;
+
+}
+
+.hero-img-container img {
+  width: 100%;
+  height: 70vh;
+  border-radius: 12px;
   object-fit: cover;
 }
 
