@@ -1,0 +1,96 @@
+/* WRAPPER */
+.stats-wrapper {
+  background: #ffffff;
+  padding: 60px 16px;
+}
+
+/* CONTAINER */
+.stats-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* CARD BASE */
+.stat-card {
+  height: 160px;
+  border-radius: 28px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TEXT */
+.stat-card h2 {
+  font-size: 52px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.stat-card p {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* COLORS */
+.yellow {
+  background: #FFD000;
+}
+
+.yellow h2,
+.yellow p {
+  color: #0B2C5D;
+}
+
+.green {
+  background: #5FCC7A;
+}
+
+.green h2 {
+  color: #ffffff;
+}
+
+.green p {
+  color: #0B2C5D;
+}
+
+.blue {
+  background: #4796F2;
+}
+
+.blue h2 {
+  color: #ffffff;
+}
+
+.blue p {
+  color: #0B2C5D;
+}
+
+.pink {
+  background: #FF3D6B;
+}
+
+.pink h2 {
+  color: #ffffff;
+}
+
+.pink p {
+  color: #0B2C5D;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -39,37 +39,101 @@ export default function Hero() {
         </div>
 
         {/* RIGHT FORM */}
-        <div className="hero-form">
-          <h2>Connect With Our Experts</h2>
+        <div >
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            className="hero-form"
+          >
+            {/* Web3Forms Access Key */}
+            <input
+              type="hidden"
+              name="access_key"
+              value="99a36398-df7f-44fe-a4cd-eeccba85ab44"
+            />
 
-          <div className="form-row">
-            <input placeholder="Enter your full name" />
-            <div className="phone-row">
-              <select>
-                <option>+91</option>
-              </select>
-              <input placeholder="Enter your no." />
+            <h2>Admissions Open for 2025–26</h2>
+
+            {/* Student & Parent Name */}
+            <div className="form-row">
+              <input
+                name="Student Name"
+                type="text"
+                placeholder="Student Name*"
+                required
+              />
+              <input
+                name="Parent Name"
+                type="text"
+                placeholder="Parent Name"
+              />
             </div>
-          </div>
 
-          <input placeholder="abc@xyz.com" />
-          <select>
-            <option>Select Degree</option>
-          </select>
-          <select>
-            <option>Select Program</option>
-          </select>
+            {/* Current Standard */}
+            <div className="form-row">
+              <select name="Current Std" required defaultValue="">
+                <option value="" disabled>
+                  Current Std
+                </option>
+                <option value="Nursery">Nursery</option>
+                <option value="LKG">LKG</option>
+                <option value="UKG">UKG</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+              </select>
 
-          <label className="checkbox">
-            <input type="checkbox" checked readOnly />
-            <span>
-              By entering these details I agree to be contacted via Email, SMS,
-              WhatsApp & Voice calls as per the Privacy Policy.
-            </span>
-          </label>
+              {/* Mobile Number */}
+              <div className="phone-row">
+                <select>
+                  <option>+91</option>
+                </select>
+                <input
+                  name="Mobile No"
+                  type="tel"
+                  placeholder="Mobile No*"
+                  required
+                />
+              </div>
+            </div>
 
-          <button className="submit-btn">Submit</button>
+            {/* Email */}
+            <input
+              name="Email"
+              type="email"
+              placeholder="Email ID"
+            />
+
+            {/* City */}
+            <input
+              name="City"
+              type="text"
+              placeholder="City*"
+              required
+            />
+
+            {/* Consent */}
+            <label className="checkbox">
+              <input type="checkbox" checked readOnly />
+              <span>
+                By entering these details I agree to be contacted via Email, SMS,
+                WhatsApp & Voice calls as per the Privacy Policy.
+              </span>
+            </label>
+
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+          </form>
         </div>
+
       </section>
     </div>
   );
