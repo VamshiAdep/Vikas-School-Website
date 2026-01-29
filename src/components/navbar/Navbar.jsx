@@ -108,7 +108,7 @@ const Navbar = () => {
                         <div className="nav-link" onClick={toggleAddmissionDropdown}>
                             Admissions <FaChevronDown size={14} color='#fff' className="dropdown-icon" />
                             <div className={`dropdown-menu ${isAddmissionDropdownOpen ? 'active' : ''}`}>
-                                <a href="/SchoolAdmissions" className="dropdown-item">Admissions For Schools 2025-26</a>
+                                <a href="/SchoolAdmissions" className="dropdown-item">Admissions For Schools 2026-27</a>
                             </div>
                         </div>
 
