@@ -75,7 +75,7 @@ const Navbar = () => {
                         <a href="/" className="nav-link">Home</a>
 
                         <div className="nav-link" onClick={toggleAboutDropdown}>
-                            About Us <FaChevronDown size={14} className="dropdown-icon" />
+                            About Us <FaChevronDown style={{ fill: '#fff' }} size={14} className="dropdown-icon" />
                             <div className={`dropdown-menu ${isAboutDropdownOpen ? 'active' : ''}`}>
                                 <a href="#aboutus" className="dropdown-item">About School</a>
                                 <a href="/management" className="dropdown-item">Our Management</a>
@@ -87,7 +87,7 @@ const Navbar = () => {
                         </div>
 
                         <div className="nav-link" onClick={toggleAcademicsDropdown}>
-                            Academics <FaChevronDown size={14} className="dropdown-icon" />
+                            Academics <FaChevronDown style={{ fill: '#fff' }} size={14} className="dropdown-icon" />
                             <div className={`dropdown-menu ${isAcademicsDropdownOpen ? 'active' : ''}`}>
                                 <a href="/RightCurriculum" className="dropdown-item">Curriculum</a>
                                 <a href="/Toppers" className="dropdown-item">Toppers</a>
@@ -96,7 +96,7 @@ const Navbar = () => {
                         </div>
 
                         <div className="nav-link" onClick={toggleWhyPEM}>
-                            Why Vikas <FaChevronDown size={14} className="dropdown-icon" />
+                            Why Vikas <FaChevronDown style={{ fill: '#fff' }} size={14} className="dropdown-icon" />
                             <div className={`dropdown-menu ${isWhyPEM ? 'active' : ''}`}>
                                 <a href="/RightCurriculum" className="dropdown-item">The Right Curriculum</a>
                                 <a href="/RightFaculty" className="dropdown-item">The Right Faculty</a>
@@ -106,9 +106,9 @@ const Navbar = () => {
                         </div>
 
                         <div className="nav-link" onClick={toggleAddmissionDropdown}>
-                            Admissions <FaChevronDown size={14} color='#fff' className="dropdown-icon" />
+                            Admissions <FaChevronDown size={14} style={{ fill: '#fff' }} className="dropdown-icon" />
                             <div className={`dropdown-menu ${isAddmissionDropdownOpen ? 'active' : ''}`}>
-                                <a href="/SchoolAdmissions" className="dropdown-item">Admissions For Schools 2025-26</a>
+                                <a href="/SchoolAdmissions" className="dropdown-item">Admissions For Schools 2026-27</a>
                             </div>
                         </div>
 

@@ -221,12 +221,16 @@ body {
 .dropdown-icon {
     margin-left: 5px;
     transition: var(--transition);
-    color: inherit;
+    fill: #fff;
+    /* White by default */
+    /* Force white */
+    /* background: red !important; Make it obvious */
 }
 
 .nav-link:hover .dropdown-icon {
     transform: rotate(180deg);
-    color: var(--primary-blue);
+    /* Remove color property or keep it white */
+    fill: #fff;
 }
 
 /* DROPDOWN MENU */
@@ -254,6 +258,11 @@ body {
 @media (min-width: 769px) {
     .nav-link:hover .dropdown-menu {
         display: flex;
+    }
+
+    .dropdown-icon {
+        fill: #000;
+        /* Black on mobile */
     }
 }
 
@@ -317,6 +326,7 @@ body {
     .nav-link {
         width: 100%;
         padding: 0.75rem 0;
+        color: #000;
     }
 
     .dropdown-menu {

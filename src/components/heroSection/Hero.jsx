@@ -6,7 +6,7 @@ export default function Hero() {
 
       {/* ADMISSION STRIP */}
       <div className="admission-strip">
-        Jan’26 Session Admissions Open Now
+        Jun’26 Session Admissions Open Now
       </div>
 
       {/* HERO */}
@@ -52,7 +52,7 @@ export default function Hero() {
               value="99a36398-df7f-44fe-a4cd-eeccba85ab44"
             />
 
-            <h2>Admissions Open for 2025–26</h2>
+            <h2>Admissions Open for 2026–27</h2>
 
             {/* Student & Parent Name */}
             <div className="form-row">
@@ -65,7 +65,8 @@ export default function Hero() {
               <input
                 name="Parent Name"
                 type="text"
-                placeholder="Parent Name"
+                placeholder="Parent Name*"
+                required
               />
             </div>
 
@@ -92,7 +93,7 @@ export default function Hero() {
 
               {/* Mobile Number */}
               <div className="phone-row">
-                <select>
+                <select required>
                   <option>+91</option>
                 </select>
                 <input
@@ -121,7 +122,7 @@ export default function Hero() {
 
             {/* Consent */}
             <label className="checkbox">
-              <input type="checkbox" checked readOnly />
+              <input type="checkbox" required/>
               <span>
                 By entering these details I agree to be contacted via Email, SMS,
                 WhatsApp & Voice calls as per the Privacy Policy.
